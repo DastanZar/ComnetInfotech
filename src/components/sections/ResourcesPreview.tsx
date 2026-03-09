@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionWrapper, StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
+import { StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
 
@@ -25,8 +25,8 @@ const resources = [
 
 export function ResourcesPreview() {
   return (
-    <SectionWrapper className="py-20 lg:py-28 bg-background-alt" id="resources">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#FFFFFF]" id="resources">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,19 +35,18 @@ export function ResourcesPreview() {
           transition={{ duration: 0.5 }}
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
         >
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 text-accent font-medium text-sm mb-4">
-              <span className="w-8 h-0.5 bg-accent" />
+          <div className="max-w-[500px]">
+            <span className="eyebrow eyebrow-light">
               Resources
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary">
+            </span>
+            <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
               Helpful Articles & Guides
             </h2>
-            <p className="mt-4 text-text-secondary">
+            <p className="mt-3 text-[#374151]">
               Practical resources to help you understand technology and make better decisions.
             </p>
           </div>
-          <Button variant="outline" href="/resources">
+          <Button variant="accent-outline" href="/resources">
             View All Resources
           </Button>
         </motion.div>
@@ -57,20 +56,20 @@ export function ResourcesPreview() {
           {resources.map((resource, index) => (
             <StaggerItem key={index}>
               <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.2 }}
+                whileHover={{ y: 0 }}
+                transition={{ duration: 0.15 }}
               >
-                <Card variant="bordered" className="h-full cursor-pointer group">
-                  <div className="text-xs font-medium text-accent uppercase tracking-wider mb-3">
+                <Card variant="light" className="h-full cursor-pointer group">
+                  <div className="text-xs font-semibold text-[#2563EB] uppercase tracking-wider mb-3">
                     {resource.category}
                   </div>
-                  <h3 className="text-lg font-semibold text-primary mb-2 group-hover:text-accent transition-colors">
+                  <h3 className="text-[15px] font-semibold text-[#1A1A1A] mb-2 group-hover:text-[#2563EB] transition-colors">
                     {resource.title}
                   </h3>
-                  <p className="text-text-secondary text-sm">
+                  <p className="text-[#374151] text-sm">
                     {resource.description}
                   </p>
-                  <div className="mt-4 flex items-center text-accent text-sm font-medium">
+                  <div className="mt-4 flex items-center text-[#2563EB] text-sm font-semibold">
                     Read More
                     <ArrowIcon />
                   </div>
@@ -80,7 +79,7 @@ export function ResourcesPreview() {
           ))}
         </StaggerWrapper>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }
 

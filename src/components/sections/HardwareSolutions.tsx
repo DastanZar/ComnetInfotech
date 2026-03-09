@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionWrapper, StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
+import { StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
 
@@ -46,24 +46,23 @@ const hardwareServices = [
 
 export function HardwareSolutions() {
   return (
-    <SectionWrapper className="py-20 lg:py-28 bg-background-alt" id="hardware">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#161616]" id="hardware">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-[640px] mx-auto mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-accent font-medium text-sm mb-4">
-            <span className="w-8 h-0.5 bg-accent" />
+          <span className="eyebrow eyebrow-dark">
             Hardware Solutions
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+          </span>
+          <h2 className="text-[32px] md:text-[36px] font-bold text-[#F0F0F0] tracking-tight mt-2">
             More Than Just Sales
           </h2>
-          <p className="text-text-secondary text-lg">
+          <p className="text-[#A0A0A0] text-lg mt-4">
             We don't just sell you equipment—we become your ongoing technology partner. 
             From procurement to maintenance, we handle the details.
           </p>
@@ -74,17 +73,17 @@ export function HardwareSolutions() {
           {hardwareServices.map((service, index) => (
             <StaggerItem key={index}>
               <motion.div
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.2 }}
+                whileHover={{ y: 0 }}
+                transition={{ duration: 0.15 }}
               >
-                <Card variant="bordered" className="h-full">
+                <Card variant="dark" className="h-full">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-accent-muted flex items-center justify-center text-accent flex-shrink-0">
+                    <div className="w-12 h-12 rounded-[12px] bg-[#2A2A2A] flex items-center justify-center text-[#3B82F6] flex-shrink-0">
                       {service.icon}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-primary mb-2">{service.title}</h3>
-                      <p className="text-text-secondary">{service.description}</p>
+                      <h3 className="text-[15px] font-semibold text-[#F0F0F0] mb-2">{service.title}</h3>
+                      <p className="text-[#A0A0A0]">{service.description}</p>
                     </div>
                   </div>
                 </Card>
@@ -99,38 +98,38 @@ export function HardwareSolutions() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-white rounded-2xl p-8 border border-border"
+          className="bg-[#161616] rounded-[16px] p-8 border border-[#2A2A2A]"
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-16 h-16 rounded-xl bg-primary flex items-center justify-center">
+              <div className="w-14 h-14 rounded-[12px] bg-[#3B82F6] flex items-center justify-center">
                 <ShieldIcon />
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-primary">OEM & Service Contracts</h3>
-                <p className="text-text-secondary">
+                <h3 className="text-[15px] font-semibold text-[#F0F0F0]">OEM & Service Contracts</h3>
+                <p className="text-[#A0A0A0] text-sm">
                   Authorized service provider for major hardware manufacturers.
                 </p>
               </div>
             </div>
-            <div className="flex gap-4">
-              <Button variant="outline" href="/hardware">
+            <div className="flex gap-3">
+              <Button variant="secondary-dark" href="/hardware">
                 Ask About Hardware
               </Button>
-              <Button variant="cta" href="/oem-contracts">
+              <Button variant="primary" href="/oem-contracts">
                 Contract Inquiry
               </Button>
             </div>
           </div>
         </motion.div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }
 
 function ShieldIcon() {
   return (
-    <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
     </svg>
   );

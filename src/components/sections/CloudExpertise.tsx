@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionWrapper } from "../ui/SectionWrapper";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
 
@@ -26,8 +25,8 @@ const cloudFeatures = [
 
 export function CloudExpertise() {
   return (
-    <SectionWrapper className="py-20 lg:py-28 bg-primary text-white" id="cloud">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#F7F6F3]" id="cloud">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <motion.div
@@ -36,31 +35,26 @@ export function CloudExpertise() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 text-accent-light font-medium text-sm mb-4">
-              <span className="w-8 h-0.5 bg-accent-light" />
+            <span className="eyebrow eyebrow-light">
               Cloud Expertise
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            </span>
+            <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
               Cloud Solutions Built for How You Work
             </h2>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+            <p className="text-[#374151] text-lg mt-6 leading-relaxed">
               The cloud isn't just the future—it's the present. We help businesses 
               of all sizes leverage cloud technology to work smarter, collaborate better, 
               and access their data from anywhere.
             </p>
-            <p className="text-gray-300 mb-8 leading-relaxed">
+            <p className="text-[#374151] mt-6 leading-relaxed">
               Whether you're moving to the cloud for the first time or optimizing 
               your existing setup, our certified team guides you through every step.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button variant="cta" href="/cloud-services">
+            <div className="flex flex-wrap gap-3 mt-8">
+              <Button variant="primary" href="/cloud-services">
                 View Cloud Solutions
               </Button>
-              <Button
-                variant="outline"
-                href="/contact"
-                className="border-white text-white hover:bg-white hover:text-primary"
-              >
+              <Button variant="secondary-light" href="/contact">
                 Talk to Comnet
               </Button>
             </div>
@@ -82,14 +76,14 @@ export function CloudExpertise() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
               >
-                <Card variant="elevated" className="bg-white/10 backdrop-blur-sm border border-white/20">
+                <Card variant="light" className="bg-[#FFFFFF]">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-[8px] bg-[#2563EB] flex items-center justify-center flex-shrink-0">
                       <CheckIcon />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-white mb-1">{feature.title}</h3>
-                      <p className="text-gray-300 text-sm">{feature.description}</p>
+                      <h3 className="font-semibold text-[#1A1A1A] mb-1">{feature.title}</h3>
+                      <p className="text-[#374151] text-sm">{feature.description}</p>
                     </div>
                   </div>
                 </Card>
@@ -98,7 +92,7 @@ export function CloudExpertise() {
           </motion.div>
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }
 

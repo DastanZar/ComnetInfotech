@@ -5,191 +5,103 @@ import { Button } from "../ui/Button";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-background via-background to-accent-muted/30">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-80 h-80 bg-accent-light/10 rounded-full blur-3xl" />
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0D0D0D]">
+      {/* Background gradient - subtle radial from center */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(circle at center, rgba(37,99,235,0.06) 0%, #0D0D0D 70%)'
+        }}
+      />
+      
+      {/* Subtle grid lines */}
+      <div 
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
+          backgroundSize: '64px 64px'
+        }}
+      />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
+      <div className="relative max-w-[1200px] mx-auto px-6 md:px-8 py-24">
+        <div className="text-center">
+          {/* Eyebrow label */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-center lg:text-left"
+            transition={{ duration: 0.4, delay: 0 }}
+            className="inline-flex items-center mb-6"
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-muted text-accent-dark text-sm font-medium mb-6"
-            >
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              Trusted IT Partner Since 2005
-            </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary leading-tight"
-            >
-              Your Technology,{' '}
-              <span className="text-accent">Simplified</span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-6 text-lg text-text-secondary max-w-xl mx-auto lg:mx-0"
-            >
-              From cloud migration to everyday IT support, we help homes and businesses 
-              get the most from their technology—without the headache.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-            >
-              <Button variant="cta" size="lg" href="/contact">
-                Book a Consultation
-              </Button>
-              <Button variant="outline" size="lg" href="/services">
-                Explore Services
-              </Button>
-            </motion.div>
-
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="mt-12 pt-8 border-t border-border"
-            >
-              <p className="text-sm text-text-muted mb-4">Trusted by homes and businesses across the region</p>
-              <div className="flex flex-wrap gap-8 justify-center lg:justify-start opacity-60">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">15+</div>
-                  <div className="text-xs text-text-muted">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">500+</div>
-                  <div className="text-xs text-text-muted">Clients Served</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">99.9%</div>
-                  <div className="text-xs text-text-muted">Uptime</div>
-                </div>
-              </div>
-            </motion.div>
+            <span className="eyebrow eyebrow-dark">
+              Cloud & IT Services · Delhi
+            </span>
           </motion.div>
 
-          {/* Visual */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative hidden lg:block"
+          {/* Main heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-[56px] md:text-[64px] font-extrabold text-[#F0F0F0] tracking-[-0.03em] leading-[1.1] max-w-[720px] mx-auto"
           >
-            <div className="relative">
-              {/* Abstract tech visualization */}
-              <div className="relative w-full aspect-square max-w-lg mx-auto">
-                {/* Main card */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-white rounded-2xl shadow-xl p-8 border border-border"
-                >
-                  <div className="h-full flex flex-col justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-accent-muted flex items-center justify-center">
-                        <CloudIcon />
-                      </div>
-                      <div>
-                        <div className="h-3 w-24 bg-primary/20 rounded" />
-                        <div className="h-2 w-16 bg-border rounded mt-2" />
-                      </div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="h-2 bg-surface rounded w-full" />
-                      <div className="h-2 bg-surface rounded w-5/6" />
-                      <div className="h-2 bg-surface rounded w-4/6" />
-                    </div>
-                    <div className="flex gap-3">
-                      <div className="h-8 w-20 bg-success/20 rounded-lg" />
-                      <div className="h-8 w-20 bg-accent-muted rounded-lg" />
-                    </div>
-                  </div>
-                </motion.div>
+            Your IT, handled with care.
+          </motion.h1>
 
-                {/* Floating elements */}
-                <motion.div
-                  animate={{ y: [0, 15, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute -right-8 top-8 bg-white rounded-xl shadow-lg p-4 border border-border"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-success-light flex items-center justify-center">
-                      <CheckIcon />
-                    </div>
-                    <div>
-                      <div className="h-2 w-16 bg-primary/20 rounded" />
-                      <div className="h-2 w-12 bg-border rounded mt-1" />
-                    </div>
-                  </div>
-                </motion.div>
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-4 text-lg text-[#A0A0A0] leading-relaxed max-w-[520px] mx-auto"
+          >
+            From cloud migration to everyday IT support, we help homes and businesses 
+            get the most from their technology—without the headache.
+          </motion.p>
 
-                <motion.div
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -left-8 bottom-16 bg-white rounded-xl shadow-lg p-4 border border-border"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-accent-light/20 flex items-center justify-center">
-                      <ShieldIcon />
-                    </div>
-                    <div>
-                      <div className="h-2 w-14 bg-primary/20 rounded" />
-                      <div className="h-2 w-10 bg-border rounded mt-1" />
-                    </div>
-                  </div>
-                </motion.div>
+          {/* CTA buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-8 flex flex-col sm:flex-row gap-3 justify-center"
+          >
+            <Button variant="primary" size="lg" href="/contact">
+              Book a Consultation
+            </Button>
+            <Button variant="secondaryDark" size="lg" href="/services">
+              Explore Services
+            </Button>
+          </motion.div>
+
+          {/* Trust indicators */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-16 pt-8 border-t border-[#2A2A2A]"
+          >
+            <p className="text-sm text-[#606060] mb-6">Trusted by homes and businesses across Delhi</p>
+            <div className="flex flex-wrap gap-8 justify-center">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[#F0F0F0]">15+</div>
+                <div className="text-xs text-[#606060] mt-1">Years Experience</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[#F0F0F0]">500+</div>
+                <div className="text-xs text-[#606060] mt-1">Clients Served</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[#F0F0F0]">99.9%</div>
+                <div className="text-xs text-[#606060] mt-1">Uptime</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-[#F0F0F0]">24/7</div>
+                <div className="text-xs text-[#606060] mt-1">Support Available</div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
     </section>
-  );
-}
-
-// Icons
-function CloudIcon() {
-  return (
-    <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-    </svg>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg className="w-5 h-5 text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-    </svg>
-  );
-}
-
-function ShieldIcon() {
-  return (
-    <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-    </svg>
   );
 }

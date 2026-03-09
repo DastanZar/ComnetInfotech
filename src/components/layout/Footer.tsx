@@ -9,8 +9,8 @@ const footerLinks = {
     { label: "Cloud Services", href: "/cloud-services" },
     { label: "IT Support & Maintenance", href: "/it-support" },
     { label: "Hardware Solutions", href: "/hardware" },
-    { label: "Backup & Disaster Recovery", href: "/services#backup" },
-    { label: "Networking & Connectivity", href: "/services#networking" },
+    { label: "OEM / Service Contracts", href: "/oem-contracts" },
+    { label: "IT Health Check", href: "/health-check" },
   ],
   company: [
     { label: "About Us", href: "/about" },
@@ -23,16 +23,17 @@ const footerLinks = {
     { label: "Book a Consultation", href: "/contact" },
     { label: "Request IT Support", href: "/support" },
     { label: "Get a Free IT Health Check", href: "/health-check" },
+    { label: "Terms of Service", href: "/terms" },
   ],
 };
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-[#0D0D0D] text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
+          {/* Company Info - Column 1 */}
           <div className="lg:col-span-1">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -40,21 +41,21 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Link href="/" className="text-2xl font-bold text-white">
-                Comnet<span className="text-accent-light">Infotech</span>
+              <Link href="/" className="text-base font-bold text-[#F0F0F0]">
+                Comnet<span className="text-[#3B82F6]">Infotech</span>
               </Link>
-              <p className="mt-4 text-gray-300 text-sm leading-relaxed">
+              <p className="mt-4 text-[#606060] text-sm leading-relaxed">
                 Your trusted partner for cloud solutions, IT support, and hardware services. 
                 We help homes and businesses navigate technology with confidence.
               </p>
-              <div className="mt-6 flex gap-4">
-                {/* Social Links Placeholder */}
+              <div className="mt-6 flex gap-3">
+                {/* LinkedIn */}
                 <a
                   href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-accent transition-colors"
+                  className="w-9 h-9 rounded-[8px] bg-[#2A2A2A] flex items-center justify-center hover:bg-[#3D3D3D] transition-colors"
                   aria-label="LinkedIn"
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-[#A0A0A0]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                   </svg>
                 </a>
@@ -62,14 +63,14 @@ export function Footer() {
             </motion.div>
           </div>
 
-          {/* Services */}
+          {/* Services - Column 2 */}
           <div>
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-lg font-semibold mb-4"
+              className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[#3D3D3D] mb-4"
             >
               Services
             </motion.h3>
@@ -84,7 +85,7 @@ export function Footer() {
                 >
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-accent-light transition-colors text-sm"
+                    className="text-[14px] text-[#606060] hover:text-[#A0A0A0] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -93,14 +94,14 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Company - Column 3 */}
           <div>
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg font-semibold mb-4"
+              className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[#3D3D3D] mb-4"
             >
               Company
             </motion.h3>
@@ -115,7 +116,7 @@ export function Footer() {
                 >
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-accent-light transition-colors text-sm"
+                    className="text-[14px] text-[#606060] hover:text-[#A0A0A0] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -124,25 +125,25 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contact CTA */}
+          {/* Contact CTA - Column 4 */}
           <div>
             <motion.h3
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="text-lg font-semibold mb-4"
+              className="text-[12px] font-semibold uppercase tracking-[0.08em] text-[#3D3D3D] mb-4"
             >
               Get in Touch
             </motion.h3>
-            <p className="text-gray-300 text-sm mb-6">
+            <p className="text-[#606060] text-sm mb-5">
               Ready to improve your IT infrastructure? Let's talk about how we can help.
             </p>
             <div className="space-y-3">
-              <Button variant="cta" href="/contact" className="w-full justify-center">
+              <Button variant="primary" href="/contact" className="w-full justify-center">
                 Book a Consultation
               </Button>
-              <Button variant="outline" href="/support" className="w-full justify-center border-white text-white hover:bg-white hover:text-primary">
+              <Button variant="secondary-dark" href="/support" className="w-full justify-center">
                 Request IT Support
               </Button>
             </div>
@@ -151,17 +152,17 @@ export function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="border-t border-[#1A1A1A]">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Comnet Infotech. All rights reserved.
+            <p className="text-[#3D3D3D] text-xs">
+              © {new Date().getFullYear()} Comnet Infotech. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-gray-400">
-              <Link href="/privacy" className="hover:text-white transition-colors">
+            <div className="flex gap-6 text-xs text-[#3D3D3D]">
+              <Link href="/privacy" className="hover:text-[#606060] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
+              <Link href="/terms" className="hover:text-[#606060] transition-colors">
                 Terms of Service
               </Link>
             </div>

@@ -3,18 +3,29 @@
 import { motion, useInView, type MotionProps } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
+type SectionBackground = "dark" | "dark-surface" | "light" | "white" | "accent";
+
 interface SectionWrapperProps extends MotionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  animation?: "fade-up" | "fade-in" | "slide-left" | "slide-right" | "scale";
+  animation?: "fade-up" | "fade-in" | "slide-left" | "slide-right" | "scale" | "none";
   once?: boolean;
   id?: string;
+  background?: SectionBackground;
 }
+
+const backgroundStyles: Record<SectionBackground, string> = {
+  dark: "bg-[#0D0D0D]",
+  "dark-surface": "bg-[#161616]",
+  light: "bg-[#F7F6F3]",
+  white: "bg-[#FFFFFF]",
+  accent: "bg-[#2563EB]",
+};
 
 const animations = {
   "fade-up": {
-    initial: { opacity: 0, y: 40 },
+    initial: { opacity: 0, y: 16 },
     animate: { opacity: 1, y: 0 },
   },
   "fade-in": {
@@ -33,7 +44,27 @@ const animations = {
     initial: { opacity: 0, scale: 0.95 },
     animate: { opacity: 1, scale: 1 },
   },
+  none: {
+    initial: { opacity: 1 },
+    animate: { opacity: 1 },
+  },
 };
+
+interface SectionContainerProps {
+  children: ReactNode;
+  className?: string;
+  background?: SectionBackground;
+}
+
+export function SectionContainer({ children, className = "", background = "white" }: SectionContainerProps) {
+  return (
+    <section className={`${backgroundStyles[background]} ${className}`}>
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+        {children}
+      </div>
+    </section>
+  );
+}
 
 export function SectionWrapper({
   children,
@@ -53,15 +84,77 @@ export function SectionWrapper({
       initial={selectedAnimation.initial}
       animate={isInView ? selectedAnimation.animate : selectedAnimation.initial}
       transition={{
-        duration: 0.6,
+        duration: 0.4,
         delay,
-        ease: [0.25, 0.1, 0.25, 1],
+        ease: [0.16, 1, 0.3, 1],
       }}
       className={className}
       {...props}
     >
       {children}
     </motion.div>
+  );
+}
+
+/* Section heading component for consistent styling */
+interface SectionHeadingProps {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  className?: string;
+  align?: "center" | "left";
+}
+
+export function SectionHeading({ 
+  eyebrow, 
+  title, 
+  description, 
+  className = "",
+  align = "center" 
+}: SectionHeadingProps) {
+  return (
+    <div className={`max-w-[640px] ${align === "center" ? "mx-auto text-center mb-12" : "mb-12"} ${className}`}>
+      {eyebrow && (
+        <span className="eyebrow">
+          {eyebrow}
+        </span>
+      )}
+      <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-4 text-[#374151] text-[16px] leading-relaxed">
+          {description}
+        </p>
+      )}
+    </div>
+  );
+}
+
+/* Dark section heading */
+export function SectionHeadingDark({ 
+  eyebrow, 
+  title, 
+  description, 
+  className = "",
+  align = "center" 
+}: SectionHeadingProps) {
+  return (
+    <div className={`max-w-[640px] ${align === "center" ? "mx-auto text-center mb-12" : "mb-12"} ${className}`}>
+      {eyebrow && (
+        <span className="eyebrow eyebrow-dark">
+          {eyebrow}
+        </span>
+      )}
+      <h2 className="text-[32px] md:text-[36px] font-bold text-[#F0F0F0] tracking-tight">
+        {title}
+      </h2>
+      {description && (
+        <p className="mt-4 text-[#A0A0A0] text-[16px] leading-relaxed">
+          {description}
+        </p>
+      )}
+    </div>
   );
 }
 
@@ -75,7 +168,7 @@ interface StaggerWrapperProps {
 export function StaggerWrapper({
   children,
   className = "",
-  staggerDelay = 0.1,
+  staggerDelay = 0.06,
 }: StaggerWrapperProps) {
   return (
     <motion.div
@@ -106,13 +199,13 @@ export function StaggerItem({ children, className = "" }: StaggerItemProps) {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 16 },
         visible: {
           opacity: 1,
           y: 0,
           transition: {
-            duration: 0.5,
-            ease: [0.25, 0.1, 0.25, 1],
+            duration: 0.4,
+            ease: [0.16, 1, 0.3, 1],
           },
         },
       }}

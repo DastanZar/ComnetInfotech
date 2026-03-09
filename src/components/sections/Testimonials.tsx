@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionWrapper, StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
+import { StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
 import { TestimonialCard } from "../ui/Card";
 
 const testimonials = [
@@ -26,24 +26,23 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <SectionWrapper className="py-20 lg:py-28 bg-surface" id="testimonials">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#F7F6F3]" id="testimonials">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-[640px] mx-auto mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-accent font-medium text-sm mb-4">
-            <span className="w-8 h-0.5 bg-accent" />
+          <span className="eyebrow eyebrow-light">
             Testimonials
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+          </span>
+          <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
             What Our Clients Say
           </h2>
-          <p className="text-text-secondary text-lg">
+          <p className="text-[#374151] text-lg mt-4">
             We let our clients speak for themselves. Here's what people say 
             about working with Comnet Infotech.
           </p>
@@ -58,11 +57,12 @@ export function Testimonials() {
                 author={testimonial.author}
                 role={testimonial.role}
                 company={testimonial.company}
+                variant="light"
               />
             </StaggerItem>
           ))}
         </StaggerWrapper>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }

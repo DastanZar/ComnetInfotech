@@ -8,7 +8,7 @@ interface CardProps extends MotionProps {
   className?: string;
   hover?: boolean;
   padding?: "none" | "sm" | "md" | "lg";
-  variant?: "default" | "elevated" | "bordered" | "surface";
+  variant?: "light" | "dark";
 }
 
 const paddingStyles = {
@@ -19,10 +19,19 @@ const paddingStyles = {
 };
 
 const variantStyles = {
-  default: "bg-white",
-  elevated: "bg-white shadow-lg",
-  bordered: "bg-white border border-border",
-  surface: "bg-surface",
+  // Light background (Notion-style)
+  light: `
+    bg-[#FFFFFF] border border-[#E9E9E7]
+    shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.06)]
+    hover:border-[#C7C7C5]
+    hover:shadow-[0_4px_8px_rgba(0,0,0,0.06),0_12px_32px_rgba(0,0,0,0.10)]
+  `,
+  // Dark background (Linear-style)
+  dark: `
+    bg-[#161616] border border-[#2A2A2A]
+    shadow-none
+    hover:border-[#3D3D3D] hover:bg-[#1A1A1A]
+  `,
 };
 
 export function Card({
@@ -30,7 +39,7 @@ export function Card({
   className = "",
   hover = false,
   padding = "md",
-  variant = "default",
+  variant = "light",
   ...props
 }: CardProps) {
   const paddingStyle = paddingStyles[padding];
@@ -38,11 +47,11 @@ export function Card({
 
   return (
     <motion.div
-      whileHover={hover ? { y: -4 } : undefined}
-      transition={{ duration: 0.2, ease: "easeOut" }}
+      whileHover={hover ? { y: 0 } : undefined}
+      transition={{ duration: 0.15 }}
       className={`
-        rounded-xl ${paddingStyle} ${variantStyle}
-        ${hover ? "shadow-md hover:shadow-xl transition-shadow" : "shadow-sm"}
+        rounded-[12px] ${paddingStyle} ${variantStyle}
+        transition-all duration-150 ease
         ${className}
       `}
       {...props}
@@ -59,14 +68,30 @@ interface ServiceCardProps {
   description: string;
   href?: string;
   className?: string;
+  variant?: "light" | "dark";
 }
 
-export function ServiceCard({ icon, title, description, href, className = "" }: ServiceCardProps) {
+export function ServiceCard({ 
+  icon, 
+  title, 
+  description, 
+  href, 
+  className = "",
+  variant = "light" 
+}: ServiceCardProps) {
+  const isDark = variant === "dark";
+  
   const content = (
-    <Card hover className={`h-full ${className}`}>
-      <div className="text-accent mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold text-primary mb-2">{title}</h3>
-      <p className="text-text-secondary">{description}</p>
+    <Card hover className={`h-full ${className}`} variant={variant}>
+      <div className={isDark ? "text-[#3B82F6] mb-4" : "text-[#2563EB] mb-4"}>
+        {icon}
+      </div>
+      <h3 className={isDark ? "text-xl font-semibold text-[#F0F0F0] mb-2" : "text-xl font-semibold text-[#1A1A1A] mb-2"}>
+        {title}
+      </h3>
+      <p className={isDark ? "text-[#A0A0A0] text-[15px] leading-relaxed" : "text-[#374151] text-[15px] leading-relaxed"}>
+        {description}
+      </p>
     </Card>
   );
 
@@ -75,7 +100,7 @@ export function ServiceCard({ icon, title, description, href, className = "" }: 
       <motion.a
         href={href}
         className="block cursor-pointer"
-        whileHover={{ scale: 1.02 }}
+        whileHover={{ scale: 1 }}
         whileTap={{ scale: 0.98 }}
       >
         {content}
@@ -92,16 +117,25 @@ interface FeatureCardProps {
   title: string;
   description: string;
   className?: string;
+  variant?: "light" | "dark";
 }
 
-export function FeatureCard({ number, title, description, className = "" }: FeatureCardProps) {
+export function FeatureCard({ number, title, description, className = "", variant = "light" }: FeatureCardProps) {
+  const isDark = variant === "dark";
+  
   return (
-    <Card variant="bordered" className={`relative overflow-hidden ${className}`}>
-      <div className="absolute -right-4 -top-4 w-20 h-20 bg-accent-muted rounded-full opacity-50" />
+    <Card variant={variant} className={`relative overflow-hidden ${className}`}>
+      <div className="absolute -right-4 -top-4 w-20 h-20 bg-[#3B82F6] rounded-full opacity-20" />
       <div className="relative">
-        <div className="text-4xl font-bold text-accent mb-4">{number}</div>
-        <h3 className="text-lg font-semibold text-primary mb-2">{title}</h3>
-        <p className="text-text-secondary text-sm">{description}</p>
+        <div className={isDark ? "text-4xl font-bold text-[#3B82F6] mb-4" : "text-4xl font-bold text-[#2563EB] mb-4"}>
+          {number}
+        </div>
+        <h3 className={isDark ? "text-lg font-semibold text-[#F0F0F0] mb-2" : "text-lg font-semibold text-[#1A1A1A] mb-2"}>
+          {title}
+        </h3>
+        <p className={isDark ? "text-[#A0A0A0] text-sm" : "text-[#374151] text-sm"}>
+          {description}
+        </p>
       </div>
     </Card>
   );
@@ -113,14 +147,25 @@ interface StatCardProps {
   label: string;
   icon?: ReactNode;
   className?: string;
+  variant?: "light" | "dark";
 }
 
-export function StatCard({ value, label, icon, className = "" }: StatCardProps) {
+export function StatCard({ value, label, icon, className = "", variant = "light" }: StatCardProps) {
+  const isDark = variant === "dark";
+  
   return (
-    <Card variant="surface" className={`text-center ${className}`}>
-      {icon && <div className="text-accent mb-2 flex justify-center">{icon}</div>}
-      <div className="text-3xl font-bold text-primary mb-1">{value}</div>
-      <div className="text-text-secondary text-sm">{label}</div>
+    <Card variant={variant} className={`text-center ${className}`}>
+      {icon && (
+        <div className={isDark ? "text-[#3B82F6] mb-2 flex justify-center" : "text-[#2563EB] mb-2 flex justify-center"}>
+          {icon}
+        </div>
+      )}
+      <div className={isDark ? "text-3xl font-bold text-[#F0F0F0] mb-1" : "text-3xl font-bold text-[#1A1A1A] mb-1"}>
+        {value}
+      </div>
+      <div className={isDark ? "text-[#A0A0A0] text-sm" : "text-[#374151] text-sm"}>
+        {label}
+      </div>
     </Card>
   );
 }
@@ -132,16 +177,32 @@ interface TestimonialCardProps {
   role: string;
   company?: string;
   className?: string;
+  variant?: "light" | "dark";
 }
 
-export function TestimonialCard({ quote, author, role, company, className = "" }: TestimonialCardProps) {
+export function TestimonialCard({ 
+  quote, 
+  author, 
+  role, 
+  company, 
+  className = "",
+  variant = "light" 
+}: TestimonialCardProps) {
+  const isDark = variant === "dark";
+  
   return (
-    <Card variant="bordered" className={className}>
-      <div className="text-accent text-4xl font-serif mb-4">"</div>
-      <p className="text-text-secondary mb-6 italic">{quote}</p>
+    <Card variant={variant} className={className}>
+      <div className={isDark ? "text-[#3B82F6] text-4xl font-serif mb-4" : "text-[#2563EB] text-4xl font-serif mb-4"}>
+        "
+      </div>
+      <p className={isDark ? "text-[#A0A0A0] mb-6 italic leading-relaxed" : "text-[#374151] mb-6 italic leading-relaxed"}>
+        {quote}
+      </p>
       <div>
-        <div className="font-semibold text-primary">{author}</div>
-        <div className="text-sm text-text-muted">
+        <div className={isDark ? "font-semibold text-[#F0F0F0]" : "font-semibold text-[#1A1A1A]"}>
+          {author}
+        </div>
+        <div className={isDark ? "text-sm text-[#606060]" : "text-sm text-[#9CA3AF]"}>
           {role}
           {company && <span> at {company}</span>}
         </div>

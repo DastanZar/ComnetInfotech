@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import { SectionWrapper } from "../ui/SectionWrapper";
 import { Button } from "../ui/Button";
 
 const faqs = [
@@ -32,31 +31,30 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <SectionWrapper className="py-20 lg:py-28 bg-white" id="faq">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#FFFFFF]" id="faq">
+      <div className="max-w-[720px] mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-accent font-medium text-sm mb-4">
-            <span className="w-8 h-0.5 bg-accent" />
+          <span className="eyebrow eyebrow-light">
             Frequently Asked Questions
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+          </span>
+          <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
             Common Questions
           </h2>
-          <p className="text-text-secondary">
+          <p className="text-[#374151] mt-4">
             Have a question? We probably have an answer. Can't find what you're looking for? 
             Get in touch—we're happy to help.
           </p>
         </motion.div>
 
         {/* FAQ Accordion */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -64,14 +62,14 @@ export function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="border border-border rounded-xl overflow-hidden"
+              className="border border-[#E9E9E7] rounded-[12px] overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-surface transition-colors"
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#F7F6F3] transition-colors"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-medium text-primary pr-4">{faq.question}</span>
+                <span className="font-semibold text-[#1A1A1A] pr-4 text-[15px]">{faq.question}</span>
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
@@ -89,7 +87,7 @@ export function FAQ() {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-4 text-text-secondary">
+                    <div className="px-6 pb-4 text-[#374151] text-[15px] leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -107,18 +105,18 @@ export function FAQ() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <Button variant="outline" href="/faq">
+          <Button variant="accent-outline" href="/faq">
             View All FAQs
           </Button>
         </motion.div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }
 
 function ChevronIcon() {
   return (
-    <svg className="w-5 h-5 text-text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5 text-[#9CA3AF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>
   );

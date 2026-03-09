@@ -4,7 +4,7 @@ import { motion, type MotionProps } from "framer-motion";
 import Link from "next/link";
 import { type ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "ghost" | "cta";
+type ButtonVariant = "primary" | "secondaryDark" | "secondaryLight" | "accentOutline" | "nav" | "cta" | "secondary" | "outline" | "ghost" | "secondary-dark" | "secondary-light" | "accent-outline";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends MotionProps {
@@ -19,17 +19,31 @@ interface ButtonProps extends MotionProps {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: "bg-primary text-white hover:bg-primary-light",
-  secondary: "bg-secondary text-white hover:bg-secondary-light",
-  outline: "border-2 border-primary text-primary hover:bg-primary hover:text-white",
-  ghost: "text-primary hover:bg-surface",
-  cta: "bg-cta text-white hover:bg-cta-hover",
+  // Primary button - blue accent for main CTAs
+  primary: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] focus-visible:ring-[#2563EB]",
+  // Alias for primary
+  cta: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] focus-visible:ring-[#2563EB]",
+  // Secondary/ghost on dark background
+  secondaryDark: "bg-transparent text-[#F0F0F0] border border-[#3D3D3D] hover:bg-[#1A1A1A] hover:border-[#606060] focus-visible:ring-[#3D3D3D]",
+  "secondary-dark": "bg-transparent text-[#F0F0F0] border border-[#3D3D3D] hover:bg-[#1A1A1A] hover:border-[#606060] focus-visible:ring-[#3D3D3D]",
+  secondary: "bg-transparent text-[#F0F0F0] border border-[#3D3D3D] hover:bg-[#1A1A1A] hover:border-[#606060] focus-visible:ring-[#3D3D3D]",
+  // Secondary/ghost on light background
+  secondaryLight: "bg-transparent text-[#1A1A1A] border border-[#E9E9E7] hover:bg-[#F7F6F3] hover:border-[#C7C7C5] focus-visible:ring-[#E9E9E7]",
+  "secondary-light": "bg-transparent text-[#1A1A1A] border border-[#E9E9E7] hover:bg-[#F7F6F3] hover:border-[#C7C7C5] focus-visible:ring-[#E9E9E7]",
+  // Accent outline for secondary CTAs on light bg
+  accentOutline: "bg-transparent text-[#2563EB] border border-[#2563EB] hover:bg-[#EFF6FF] focus-visible:ring-[#2563EB]",
+  "accent-outline": "bg-transparent text-[#2563EB] border border-[#2563EB] hover:bg-[#EFF6FF] focus-visible:ring-[#2563EB]",
+  // Legacy variants
+  outline: "bg-transparent text-[#1A1A1A] border border-[#E9E9E7] hover:bg-[#F7F6F3] hover:border-[#C7C7C5] focus-visible:ring-[#E9E9E7]",
+  ghost: "bg-transparent text-[#1A1A1A] hover:bg-[#F7F6F3] focus-visible:ring-[#E9E9E7]",
+  // Nav CTA button
+  nav: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] focus-visible:ring-[#2563EB]",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
   sm: "px-4 py-2 text-sm",
-  md: "px-6 py-3 text-base",
-  lg: "px-8 py-4 text-lg",
+  md: "px-5 py-2.5 text-sm",
+  lg: "px-6 py-3 text-base",
 };
 
 export function Button({
@@ -44,9 +58,9 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles = `
-    inline-flex items-center justify-center font-medium rounded-lg
-    transition-colors duration-200 ease-in-out
-    focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-accent
+    inline-flex items-center justify-center font-semibold rounded-[8px]
+    transition-all duration-150 ease
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
     disabled:opacity-50 disabled:cursor-not-allowed
     cursor-pointer
   `;
@@ -56,7 +70,7 @@ export function Button({
 
   const buttonContent = (
     <motion.span
-      whileHover={{ scale: disabled ? 1 : 1.02 }}
+      whileHover={{ scale: disabled ? 1 : 1.01 }}
       whileTap={{ scale: disabled ? 1 : 0.98 }}
       className="inline-flex items-center gap-2"
     >
@@ -89,25 +103,36 @@ export function Button({
   );
 }
 
-/* Animated icon button */
+/* Icon button component */
 interface IconButtonProps {
   icon: ReactNode;
   label: string;
   href?: string;
   className?: string;
   onClick?: () => void;
+  variant?: "dark" | "light";
 }
 
-export function IconButton({ icon, label, href, className = "", onClick }: IconButtonProps) {
+export function IconButton({ 
+  icon, 
+  label, 
+  href, 
+  className = "", 
+  onClick,
+  variant = "light" 
+}: IconButtonProps) {
+  const baseStyles = variant === "dark" 
+    ? "bg-transparent text-[#F0F0F0] hover:text-white hover:bg-[#1A1A1A]"
+    : "bg-transparent text-[#1A1A1A] hover:text-[#1A1A1A] hover:bg-[#F7F6F3]";
+
   const button = (
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={`
-        p-3 rounded-full bg-surface hover:bg-accent-muted
-        text-primary hover:text-accent
-        transition-colors duration-200
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-accent
+        p-3 rounded-full ${baseStyles}
+        transition-colors duration-150
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]
         ${className}
       `}
       aria-label={label}

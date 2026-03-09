@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SectionWrapper, StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
+import { StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
 
 const steps = [
   {
@@ -28,24 +28,23 @@ const steps = [
 
 export function HowWeWork() {
   return (
-    <SectionWrapper className="py-20 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-24 bg-[#0D0D0D]">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-[640px] mx-auto mb-12"
         >
-          <div className="inline-flex items-center gap-2 text-accent font-medium text-sm mb-4">
-            <span className="w-8 h-0.5 bg-accent" />
+          <span className="eyebrow eyebrow-dark">
             How We Work
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+          </span>
+          <h2 className="text-[32px] md:text-[36px] font-bold text-[#F0F0F0] tracking-tight mt-2">
             A Simple, Straightforward Approach
           </h2>
-          <p className="text-text-secondary text-lg">
+          <p className="text-[#A0A0A0] text-lg mt-4">
             Technology doesn't have to be complicated. Our process is designed 
             to be as simple and transparent as possible.
           </p>
@@ -54,7 +53,7 @@ export function HowWeWork() {
         {/* Steps */}
         <div className="relative">
           {/* Connection Line - Desktop */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-muted via-accent to-accent-muted -translate-y-1/2" />
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#3D3D3D] to-transparent -translate-y-1/2" />
 
           <StaggerWrapper className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {steps.map((step, index) => (
@@ -67,14 +66,14 @@ export function HowWeWork() {
                   className="relative"
                 >
                   {/* Step Card */}
-                  <div className="bg-white p-6 rounded-2xl border border-border relative z-10">
-                    <div className="text-5xl font-bold text-accent-muted mb-4">
+                  <div className="bg-[#161616] p-6 rounded-[16px] border border-[#2A2A2A] relative z-10">
+                    <div className="text-[40px] font-bold text-[#3D3D3D] mb-4 tracking-tight">
                       {step.number}
                     </div>
-                    <h3 className="text-lg font-semibold text-primary mb-2">
+                    <h3 className="text-[15px] font-semibold text-[#F0F0F0] mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-text-secondary text-sm leading-relaxed">
+                    <p className="text-[#A0A0A0] text-sm leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -84,6 +83,6 @@ export function HowWeWork() {
           </StaggerWrapper>
         </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }

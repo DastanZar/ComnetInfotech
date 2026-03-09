@@ -7,8 +7,8 @@ import { CloudExpertise } from "@/components/sections/CloudExpertise";
 import { HardwareSolutions } from "@/components/sections/HardwareSolutions";
 import { HowWeWork } from "@/components/sections/HowWeWork";
 import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
 import { ResourcesPreview } from "@/components/sections/ResourcesPreview";
+import { FAQ } from "@/components/sections/FAQ";
 import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export default function Home() {
@@ -23,8 +23,8 @@ export default function Home() {
       <HardwareSolutions />
       <HowWeWork />
       <Testimonials />
-      <FAQ />
       <ResourcesPreview />
+      <FAQ />
       <ContactCTA />
     </main>
   );
