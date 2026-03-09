@@ -58,7 +58,7 @@ export function Header() {
                 whileHover={{ scale: 1.02 }}
                 className="text-[15px] font-bold text-[#F2F2F2]"
               >
-                Comnet<span className="text-[#3B82F6]">Infotech</span>
+                Comnet<span className="text-[#F97316]">Infotech</span>
               </motion.div>
             </Link>
 
@@ -163,7 +163,7 @@ export function Header() {
                 {/* Mobile Logo */}
                 <div className="flex items-center justify-between mb-8">
                   <Link href="/" className="text-lg font-bold text-[#F2F2F2]">
-                    Comnet<span className="text-[#3B82F6]">Infotech</span>
+                    Comnet<span className="text-[#F97316]">Infotech</span>
                   </Link>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}

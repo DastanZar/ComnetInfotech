@@ -49,7 +49,7 @@ export function TrustStrip() {
         <StaggerWrapper className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {trustItems.map((item, index) => (
             <StaggerItem key={index} className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-[8px] bg-[#111111] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-[#3B82F6]">
+              <div className="flex-shrink-0 w-12 h-12 rounded-[8px] bg-[#111111] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-[#F97316]">
                 {item.icon}
               </div>
               <div>

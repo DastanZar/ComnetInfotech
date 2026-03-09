@@ -20,9 +20,9 @@ interface ButtonProps extends MotionProps {
 
 /* LINEAR EXACT BUTTON STYLES */
 const variantStyles: Record<ButtonVariant, string> = {
-  // Primary button - Linear blue
+  // Primary button - Orange
   primary: 
-    "bg-[#2563EB] text-white hover:bg-[#1D4ED8] ",
+    "bg-[#F97316] text-white hover:bg-[#EA580C] ",
   // Secondary ghost button - Linear style on dark
   secondary: 
     "bg-transparent text-[#F2F2F2] border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.20)] ",
@@ -30,9 +30,9 @@ const variantStyles: Record<ButtonVariant, string> = {
   ghost: 
     "bg-transparent text-[#8A8A8A] hover:text-[#F2F2F2] ",
   // Nav CTA button - same as primary
-  nav: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] ",
+  nav: "bg-[#F97316] text-white hover:bg-[#EA580C] ",
   // CTA alias for primary
-  cta: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] ",
+  cta: "bg-[#F97316] text-white hover:bg-[#EA580C] ",
   // Outline for light backgrounds
   outline: "bg-transparent text-[#F2F2F2] border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.20)]",
   // Secondary dark variant
@@ -40,7 +40,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   // Secondary light variant
   "secondary-light": "bg-transparent text-[#F2F2F2] border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.20)]",
   // Accent outline variant
-  "accent-outline": "bg-transparent text-[#3B82F6] border border-[rgba(37,99,235,0.16)] hover:bg-[rgba(37,99,235,0.08)] hover:border-[rgba(37,99,235,0.24)]",
+  "accent-outline": "bg-transparent text-[#F97316] border border-[rgba(249,115,22,0.16)] hover:bg-[rgba(249,115,22,0.08)] hover:border-[rgba(249,115,22,0.24)]",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
@@ -63,7 +63,7 @@ export function Button({
   const baseStyles = `
     inline-flex items-center justify-center font-medium rounded-[6px]
     transition-all duration-120ms ease
-    focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(37,99,235,0.5)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(249,115,22,0.5)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]
     disabled:opacity-50 disabled:cursor-not-allowed
     cursor-pointer
   `;
@@ -138,7 +138,7 @@ export function IconButton ({
         p-3 rounded-full 
         bg-transparent text-[#8A8A8A] hover:text-[#F2F2F2] hover:bg-[rgba(255,255,255,0.04)]
         transition-colors duration-120ms
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(37,99,235,0.5)]
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(249,115,22,0.5)]
         ${className}
       `}
       aria-label={label}

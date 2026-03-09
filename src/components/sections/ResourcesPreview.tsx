@@ -60,16 +60,16 @@ export function ResourcesPreview() {
                 transition={{ duration: 0.15 }}
               >
                 <Card variant="dark" className="h-full cursor-pointer group">
-                  <div className="text-xs font-semibold text-[#2563EB] uppercase tracking-wider mb-3">
+                  <div className="text-xs font-semibold text-[#F97316] uppercase tracking-wider mb-3">
                     {resource.category}
                   </div>
-                  <h3 className="text-[15px] font-semibold text-[#F2F2F2] mb-2 group-hover:text-[#2563EB] transition-colors">
+                  <h3 className="text-[15px] font-semibold text-[#F2F2F2] mb-2 group-hover:text-[#F97316] transition-colors">
                     {resource.title}
                   </h3>
                   <p className="text-[#8A8A8A] text-sm">
                     {resource.description}
                   </p>
-                  <div className="mt-4 flex items-center text-[#2563EB] text-sm font-semibold">
+                  <div className="mt-4 flex items-center text-[#F97316] text-sm font-semibold">
                     Read More
                     <ArrowIcon />
                   </div>

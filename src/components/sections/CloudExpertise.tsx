@@ -78,7 +78,7 @@ export function CloudExpertise() {
               >
                 <Card variant="dark">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-[8px] bg-[#2563EB] flex items-center justify-center flex-shrink-0">
+                    <div className="w-10 h-10 rounded-[8px] bg-[#F97316] flex items-center justify-center flex-shrink-0">
                       <CheckIcon />
                     </div>
                     <div>

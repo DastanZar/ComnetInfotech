@@ -20,7 +20,7 @@ const backgroundStyles: Record<SectionBackground, string> = {
   "dark-surface": "bg-[#161616]",
   light: "bg-[#F7F6F3]",
   white: "bg-[#FFFFFF]",
-  accent: "bg-[#2563EB]",
+  accent: "bg-[#F97316]",
 };
 
 const animations = {

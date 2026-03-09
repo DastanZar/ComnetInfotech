@@ -79,7 +79,7 @@ export function ServiceCard({
 }: ServiceCardProps) {
   const content = (
     <Card hover className={`h-full ${className}`} variant={variant} padding="lg">
-      <div className="text-[#3B82F6] mb-4">
+      <div className="text-[#F97316] mb-4">
         {icon}
       </div>
       <h3 className="text-[17px] font-semibold text-[#F2F2F2] mb-2" style={{ letterSpacing: '-0.01em' }}>
@@ -119,7 +119,7 @@ interface FeatureCardProps {
 export function FeatureCard({ number, title, description, className = "", variant = "dark" }: FeatureCardProps) {
   return (
     <Card variant={variant} className={`relative overflow-hidden ${className}`} padding="lg">
-      <div className="text-[40px] font-bold text-[#3B82F6] mb-4" style={{ letterSpacing: '-0.03em' }}>
+      <div className="text-[40px] font-bold text-[#F97316] mb-4" style={{ letterSpacing: '-0.03em' }}>
         {number}
       </div>
       <h3 className="text-[17px] font-semibold text-[#F2F2F2] mb-2" style={{ letterSpacing: '-0.01em' }}>
@@ -145,7 +145,7 @@ export function StatCard({ value, label, icon, className = "", variant = "dark" 
   return (
     <Card variant={variant} className={`text-center ${className}`} padding="lg">
       {icon && (
-        <div className="text-[#3B82F6] mb-2 flex justify-center">
+        <div className="text-[#F97316] mb-2 flex justify-center">
           {icon}
         </div>
       )}
@@ -179,7 +179,7 @@ export function TestimonialCard({
 }: TestimonialCardProps) {
   return (
     <Card variant={variant} className={className} padding="lg">
-      <div className="text-[#3B82F6] text-[40px] font-serif mb-4 leading-none">
+      <div className="text-[#F97316] text-[40px] font-serif mb-4 leading-none">
         "
       </div>
       <p className="text-[15px] text-[#8A8A8A] mb-6 italic leading-relaxed">

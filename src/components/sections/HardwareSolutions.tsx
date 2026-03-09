@@ -78,7 +78,7 @@ export function HardwareSolutions() {
               >
                 <Card variant="dark" className="h-full">
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-[12px] bg-[#2A2A2A] flex items-center justify-center text-[#3B82F6] flex-shrink-0">
+                    <div className="w-12 h-12 rounded-[12px] bg-[#2A2A2A] flex items-center justify-center text-[#F97316] flex-shrink-0">
                       {service.icon}
                     </div>
                     <div>
@@ -102,7 +102,7 @@ export function HardwareSolutions() {
         >
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-[12px] bg-[#3B82F6] flex items-center justify-center">
+              <div className="w-14 h-14 rounded-[12px] bg-[#F97316] flex items-center justify-center">
                 <ShieldIcon />
               </div>
               <div>

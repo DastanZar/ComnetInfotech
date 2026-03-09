@@ -85,7 +85,7 @@ export function WhoWeServe() {
                 transition={{ duration: 0.15 }}
               >
                 <Card variant="dark" className="h-full text-center">
-                  <div className="w-14 h-14 mx-auto mb-4 rounded-[8px] bg-[#111111] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-[#3B82F6]">
+                  <div className="w-14 h-14 mx-auto mb-4 rounded-[8px] bg-[#111111] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-[#F97316]">
                     {segment.icon}
                   </div>
                   <h3 className="text-[15px] font-semibold text-[#F2F2F2] mb-2">{segment.title}</h3>

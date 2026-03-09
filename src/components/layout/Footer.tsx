@@ -42,7 +42,7 @@ export function Footer() {
               transition={{ duration: 0.5 }}
             >
               <Link href="/" className="text-[15px] font-bold text-[#F2F2F2]">
-                Comnet<span className="text-[#3B82F6]">Infotech</span>
+                Comnet<span className="text-[#F97316]">Infotech</span>
               </Link>
               <p className="mt-4 text-[#4A4A4A] text-[13px] leading-relaxed">
                 Your trusted partner for cloud solutions, IT support, and hardware services. 

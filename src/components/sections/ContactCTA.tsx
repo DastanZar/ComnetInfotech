@@ -5,7 +5,7 @@ import { Button } from "../ui/Button";
 
 export function ContactCTA() {
   return (
-    <section className="py-24 bg-[#2563EB]">
+    <section className="py-24 bg-[#F97316]">
       <div className="max-w-[800px] mx-auto px-6 md:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
