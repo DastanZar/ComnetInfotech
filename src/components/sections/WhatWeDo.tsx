@@ -6,8 +6,8 @@ import { Button } from "../ui/Button";
 
 export function WhatWeDo() {
   return (
-    <section className="py-24 bg-[#F7F6F3]">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+    <section className="py-24 bg-[#0A0A0A]">
+      <div className="max-w-[1120px] mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <motion.div
@@ -16,18 +16,18 @@ export function WhatWeDo() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="eyebrow eyebrow-light">
+            <span className="eyebrow">
               What We Do
             </span>
-            <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
+            <h2 className="text-[32px] md:text-[32px] font-bold text-[#F2F2F2] mt-2" style={{ letterSpacing: '-0.03em' }}>
               Technology That Works for You
             </h2>
-            <p className="text-[#374151] text-lg mt-6 leading-relaxed">
+            <p className="text-[#8A8A8A] text-[15px] mt-6 leading-[1.6]">
               At Comnet Infotech, we believe technology should simplify your life—not complicate it. 
               Whether you're a family looking to set up your first home network or a business 
               needing enterprise-grade cloud solutions, we're here to help.
             </p>
-            <p className="text-[#374151] mt-6 leading-relaxed">
+            <p className="text-[#8A8A8A] text-[15px] mt-6 leading-[1.6]">
               Since 2005, we've been the trusted technology partner for homes and businesses 
               throughout the region. Our approach is simple: listen to your needs, explain your 
               options in plain English, and deliver solutions that just work.
@@ -36,7 +36,7 @@ export function WhatWeDo() {
               <Button variant="primary" href="/about">
                 Learn More About Us
               </Button>
-              <Button variant="secondaryLight" href="/contact">
+              <Button variant="secondary" href="/contact">
                 Talk to Comnet
               </Button>
             </div>
@@ -54,41 +54,41 @@ export function WhatWeDo() {
               <div className="space-y-4">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-[#FFFFFF] border border-[#E9E9E7] rounded-[16px] p-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.06)]"
+                  className="bg-[#111111] border border-[rgba(255,255,255,0.06)] rounded-[10px] p-6 text-center"
                 >
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-[12px] bg-[#EFF6FF] flex items-center justify-center">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-[8px] bg-[rgba(37,99,235,0.08)] flex items-center justify-center">
                     <CloudIcon />
                   </div>
-                  <div className="font-semibold text-[#1A1A1A]">Cloud Solutions</div>
+                  <div className="font-semibold text-[#F2F2F2]">Cloud Solutions</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-[#FFFFFF] border border-[#E9E9E7] rounded-[16px] p-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.06)]"
+                  className="bg-[#111111] border border-[rgba(255,255,255,0.06)] rounded-[10px] p-6 text-center"
                 >
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-[12px] bg-[#F7F6F3] flex items-center justify-center">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-[8px] bg-[rgba(37,99,235,0.08)] flex items-center justify-center">
                     <SupportIcon />
                   </div>
-                  <div className="font-semibold text-[#1A1A1A]">IT Support</div>
+                  <div className="font-semibold text-[#F2F2F2]">IT Support</div>
                 </motion.div>
               </div>
               <div className="space-y-4 pt-8">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-[#FFFFFF] border border-[#E9E9E7] rounded-[16px] p-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.06)]"
+                  className="bg-[#111111] border border-[rgba(255,255,255,0.06)] rounded-[10px] p-6 text-center"
                 >
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-[12px] bg-[#F7F6F3] flex items-center justify-center">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-[8px] bg-[rgba(37,99,235,0.08)] flex items-center justify-center">
                     <HardwareIcon />
                   </div>
-                  <div className="font-semibold text-[#1A1A1A]">Hardware</div>
+                  <div className="font-semibold text-[#F2F2F2]">Hardware</div>
                 </motion.div>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-[#FFFFFF] border border-[#E9E9E7] rounded-[16px] p-6 text-center shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.06)]"
+                  className="bg-[#111111] border border-[rgba(255,255,255,0.06)] rounded-[10px] p-6 text-center"
                 >
-                  <div className="w-12 h-12 mx-auto mb-3 rounded-[12px] bg-[#EFF6FF] flex items-center justify-center">
+                  <div className="w-12 h-12 mx-auto mb-3 rounded-[8px] bg-[rgba(37,99,235,0.08)] flex items-center justify-center">
                     <SecurityIcon />
                   </div>
-                  <div className="font-semibold text-[#1A1A1A]">Security</div>
+                  <div className="font-semibold text-[#F2F2F2]">Security</div>
                 </motion.div>
               </div>
             </div>

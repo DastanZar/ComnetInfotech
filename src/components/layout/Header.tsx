@@ -21,22 +21,8 @@ const navItems = [
 ];
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
-  
-  // Check if we're on the home page (for transparent header)
-  const isHomePage = pathname === "/";
-
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -50,51 +36,33 @@ export function Header() {
     };
   }, [isMobileMenuOpen]);
 
-  // Determine header styles based on scroll and page
-  const showTransparent = isHomePage && !isScrolled;
-  
-  const headerBg = showTransparent 
-    ? "bg-transparent" 
-    : "bg-[#FFFFFF]";
-  
-  const headerBorder = showTransparent
-    ? "border-b-0"
-    : "border-b border-[#E9E9E7]";
-  
-  const logoColor = showTransparent ? "text-[#F0F0F0]" : "text-[#1A1A1A]";
-  
-  const navLinkColor = showTransparent 
-    ? "text-[#A0A0A0] hover:text-[#FFFFFF]" 
-    : "text-[#374151] hover:text-[#1A1A1A]";
-  
-  const navCtaVariant: "primary" | "nav" = showTransparent ? "primary" : "nav";
-
   return (
     <>
+      {/* LINEAR EXACT NAVBAR - Always dark, fixed blur background */}
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`
-          fixed top-0 left-0 right-0 z-50 h-16
-          ${headerBg} ${headerBorder}
+          fixed top-0 left-0 right-0 z-50 h-14
+          bg-[rgba(10,10,10,0.80)] backdrop-blur-[12px] backdrop-saturate-[180%]
+          border-b border-[rgba(255,255,255,0.06)]
           transition-all duration-200 ease
-          ${showTransparent ? "" : "backdrop-blur-md"}
         `}
       >
-        <div className="max-w-[1200px] mx-auto px-6 md:px-8 h-full">
+        <div className="max-w-[1120px] mx-auto px-6 h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Logo */}
+            {/* Logo - Linear style */}
             <Link href="/" className="flex items-center gap-2">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className={`text-lg font-bold ${logoColor}`}
+                className="text-[15px] font-bold text-[#F2F2F2]"
               >
-                Comnet<span className="text-[#2563EB]">Infotech</span>
+                Comnet<span className="text-[#3B82F6]">Infotech</span>
               </motion.div>
             </Link>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation - Linear style */}
             <nav className="hidden lg:flex items-center gap-1">
               {navItems.slice(0, 7).map((item, index) => (
                 <motion.div
@@ -106,10 +74,9 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={`
-                      px-3 py-2 text-sm font-medium rounded-[8px]
-                      transition-colors duration-150
-                      ${navLinkColor}
-                      hover:bg-[rgba(37,99,235,0.08)]
+                      px-3 py-2 text-[14px] font-medium rounded-[6px]
+                      transition-colors duration-120ms
+                      text-[#8A8A8A] hover:text-[#F2F2F2]
                     `}
                   >
                     {item.label}
@@ -118,28 +85,28 @@ export function Header() {
               ))}
             </nav>
 
-            {/* CTA Button */}
+            {/* CTA Button - Linear primary style */}
             <div className="hidden lg:block">
               <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <Button variant={navCtaVariant} size="sm" href="/contact">
+                <Button variant="primary" size="sm" href="/contact">
                   Book a Consultation
                 </Button>
               </motion.div>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Linear dark style */}
             <motion.button
               whileTap={{ scale: 0.95 }}
-              className="lg:hidden p-2 rounded-[8px] hover:bg-[#F7F6F3]"
+              className="lg:hidden p-2 rounded-[6px] hover:bg-[rgba(255,255,255,0.04)]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
               <svg
-                className={`w-6 h-6 ${showTransparent ? "text-[#F0F0F0]" : "text-[#1A1A1A]"}`}
+                className="w-5 h-5 text-[#8A8A8A]"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -165,7 +132,7 @@ export function Header() {
         </div>
       </motion.header>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Linear dark style */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -180,30 +147,30 @@ export function Header() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-[#0D0D0D]/50 backdrop-blur-sm"
+              className="absolute inset-0 bg-[#0A0A0A]/80 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
-            {/* Menu Panel */}
+            {/* Menu Panel - Linear dark */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.2 }}
-              className="absolute right-0 top-0 bottom-0 w-80 max-w-full bg-[#FFFFFF] border-l border-[#E9E9E7]"
+              className="absolute right-0 top-0 bottom-0 w-80 max-w-full bg-[#0F0F0F] border-l border-[rgba(255,255,255,0.06)]"
             >
               <div className="p-6">
                 {/* Mobile Logo */}
                 <div className="flex items-center justify-between mb-8">
-                  <Link href="/" className="text-xl font-bold text-[#1A1A1A]">
-                    Comnet<span className="text-[#2563EB]">Infotech</span>
+                  <Link href="/" className="text-lg font-bold text-[#F2F2F2]">
+                    Comnet<span className="text-[#3B82F6]">Infotech</span>
                   </Link>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="p-2 rounded-[8px] hover:bg-[#F7F6F3]"
+                    className="p-2 rounded-[6px] hover:bg-[rgba(255,255,255,0.04)]"
                   >
                     <svg
-                      className="w-5 h-5 text-[#1A1A1A]"
+                      className="w-5 h-5 text-[#8A8A8A]"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -218,7 +185,7 @@ export function Header() {
                   </button>
                 </div>
 
-                {/* Mobile Nav Links */}
+                {/* Mobile Nav Links - Linear style */}
                 <nav className="space-y-1">
                   {navItems.map((item, index) => (
                     <motion.div
@@ -229,7 +196,8 @@ export function Header() {
                     >
                       <Link
                         href={item.href}
-                        className="block px-4 py-3 text-[15px] font-medium text-[#1A1A1A] rounded-[8px] hover:bg-[#F7F6F3] hover:text-[#2563EB] transition-colors"
+                        className="block px-4 py-3 text-[15px] font-medium text-[#8A8A8A] rounded-[6px] hover:text-[#F2F2F2] hover:bg-[rgba(255,255,255,0.04)] transition-colors"
+                        onClick={() => setIsMobileMenuOpen(false)}
                       >
                         {item.label}
                       </Link>
@@ -238,8 +206,8 @@ export function Header() {
                 </nav>
 
                 {/* Mobile CTA */}
-                <div className="mt-8 pt-6 border-t border-[#E9E9E7]">
-                  <Button variant="nav" href="/contact" className="w-full justify-center">
+                <div className="mt-8 pt-6 border-t border-[rgba(255,255,255,0.06)]">
+                  <Button variant="primary" href="/contact" className="w-full justify-center">
                     Book a Consultation
                   </Button>
                 </div>
@@ -250,7 +218,7 @@ export function Header() {
       </AnimatePresence>
 
       {/* Spacer for fixed header */}
-      <div className="h-16" />
+      <div className="h-14" />
     </>
   );
 }

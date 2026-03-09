@@ -71,8 +71,8 @@ const services = [
 
 export function ServiceCards() {
   return (
-    <section className="py-24 bg-[#FFFFFF]" id="services">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+    <section className="py-24 bg-[#0A0A0A]" id="services">
+      <div className="max-w-[1120px] mx-auto px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -81,20 +81,20 @@ export function ServiceCards() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-[640px] mx-auto mb-12"
         >
-          <span className="eyebrow eyebrow-light">
+          <span className="eyebrow">
             Our Services
           </span>
-          <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
+          <h2 className="text-[32px] font-bold text-[#F2F2F2] mt-2" style={{ letterSpacing: '-0.03em' }}>
             Comprehensive IT Solutions
           </h2>
-          <p className="text-[#374151] text-lg mt-4">
+          <p className="text-[#8A8A8A] text-[15px] mt-4">
             From everyday support to complex cloud migrations, we handle the technology 
             so you can focus on what matters most.
           </p>
         </motion.div>
 
         {/* Service Cards */}
-        <StaggerWrapper className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerWrapper className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {services.map((service, index) => (
             <StaggerItem key={index}>
               <ServiceCard
@@ -102,7 +102,7 @@ export function ServiceCards() {
                 title={service.title}
                 description={service.description}
                 href={service.href}
-                variant="light"
+                variant="dark"
               />
             </StaggerItem>
           ))}
@@ -116,7 +116,7 @@ export function ServiceCards() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <Button variant="accent-outline" href="/services">
+          <Button variant="secondary" href="/services">
             View All Services
           </Button>
         </motion.div>

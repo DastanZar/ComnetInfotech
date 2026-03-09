@@ -4,7 +4,7 @@ import { motion, type MotionProps } from "framer-motion";
 import Link from "next/link";
 import { type ReactNode } from "react";
 
-type ButtonVariant = "primary" | "secondaryDark" | "secondaryLight" | "accentOutline" | "nav" | "cta" | "secondary" | "outline" | "ghost" | "secondary-dark" | "secondary-light" | "accent-outline";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "nav" | "cta" | "outline" | "secondary-dark" | "secondary-light" | "accent-outline";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps extends MotionProps {
@@ -18,32 +18,35 @@ interface ButtonProps extends MotionProps {
   onClick?: () => void;
 }
 
+/* LINEAR EXACT BUTTON STYLES */
 const variantStyles: Record<ButtonVariant, string> = {
-  // Primary button - blue accent for main CTAs
-  primary: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] focus-visible:ring-[#2563EB]",
-  // Alias for primary
-  cta: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] focus-visible:ring-[#2563EB]",
-  // Secondary/ghost on dark background
-  secondaryDark: "bg-transparent text-[#F0F0F0] border border-[#3D3D3D] hover:bg-[#1A1A1A] hover:border-[#606060] focus-visible:ring-[#3D3D3D]",
-  "secondary-dark": "bg-transparent text-[#F0F0F0] border border-[#3D3D3D] hover:bg-[#1A1A1A] hover:border-[#606060] focus-visible:ring-[#3D3D3D]",
-  secondary: "bg-transparent text-[#F0F0F0] border border-[#3D3D3D] hover:bg-[#1A1A1A] hover:border-[#606060] focus-visible:ring-[#3D3D3D]",
-  // Secondary/ghost on light background
-  secondaryLight: "bg-transparent text-[#1A1A1A] border border-[#E9E9E7] hover:bg-[#F7F6F3] hover:border-[#C7C7C5] focus-visible:ring-[#E9E9E7]",
-  "secondary-light": "bg-transparent text-[#1A1A1A] border border-[#E9E9E7] hover:bg-[#F7F6F3] hover:border-[#C7C7C5] focus-visible:ring-[#E9E9E7]",
-  // Accent outline for secondary CTAs on light bg
-  accentOutline: "bg-transparent text-[#2563EB] border border-[#2563EB] hover:bg-[#EFF6FF] focus-visible:ring-[#2563EB]",
-  "accent-outline": "bg-transparent text-[#2563EB] border border-[#2563EB] hover:bg-[#EFF6FF] focus-visible:ring-[#2563EB]",
-  // Legacy variants
-  outline: "bg-transparent text-[#1A1A1A] border border-[#E9E9E7] hover:bg-[#F7F6F3] hover:border-[#C7C7C5] focus-visible:ring-[#E9E9E7]",
-  ghost: "bg-transparent text-[#1A1A1A] hover:bg-[#F7F6F3] focus-visible:ring-[#E9E9E7]",
-  // Nav CTA button
-  nav: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] focus-visible:ring-[#2563EB]",
+  // Primary button - Linear blue
+  primary: 
+    "bg-[#2563EB] text-white hover:bg-[#1D4ED8] ",
+  // Secondary ghost button - Linear style on dark
+  secondary: 
+    "bg-transparent text-[#F2F2F2] border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.20)] ",
+  // Ghost/label for navigation
+  ghost: 
+    "bg-transparent text-[#8A8A8A] hover:text-[#F2F2F2] ",
+  // Nav CTA button - same as primary
+  nav: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] ",
+  // CTA alias for primary
+  cta: "bg-[#2563EB] text-white hover:bg-[#1D4ED8] ",
+  // Outline for light backgrounds
+  outline: "bg-transparent text-[#F2F2F2] border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.20)]",
+  // Secondary dark variant
+  "secondary-dark": "bg-transparent text-[#F2F2F2] border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.20)]",
+  // Secondary light variant
+  "secondary-light": "bg-transparent text-[#F2F2F2] border border-[rgba(255,255,255,0.12)] hover:bg-[rgba(255,255,255,0.04)] hover:border-[rgba(255,255,255,0.20)]",
+  // Accent outline variant
+  "accent-outline": "bg-transparent text-[#3B82F6] border border-[rgba(37,99,235,0.16)] hover:bg-[rgba(37,99,235,0.08)] hover:border-[rgba(37,99,235,0.24)]",
 };
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "px-4 py-2 text-sm",
-  md: "px-5 py-2.5 text-sm",
-  lg: "px-6 py-3 text-base",
+  sm: "px-4 py-2 text-[14px]",
+  md: "px-4 py-2 text-[14px]",
+  lg: "px-6 py-3 text-[15px]",
 };
 
 export function Button({
@@ -58,9 +61,9 @@ export function Button({
   ...props
 }: ButtonProps) {
   const baseStyles = `
-    inline-flex items-center justify-center font-semibold rounded-[8px]
-    transition-all duration-150 ease
-    focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
+    inline-flex items-center justify-center font-medium rounded-[6px]
+    transition-all duration-120ms ease
+    focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(37,99,235,0.5)] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0A]
     disabled:opacity-50 disabled:cursor-not-allowed
     cursor-pointer
   `;
@@ -68,10 +71,16 @@ export function Button({
   const variantStyle = variantStyles[variant];
   const sizeStyle = sizeStyles[size];
 
+  // Primary and nav buttons get subtle scale on hover
+  const whileHover = variant === "primary" || variant === "nav"
+    ? { scale: disabled ? 1 : 1.01 }
+    : undefined;
+  const whileTap = { scale: disabled ? 1 : 0.99 };
+
   const buttonContent = (
     <motion.span
-      whileHover={{ scale: disabled ? 1 : 1.01 }}
-      whileTap={{ scale: disabled ? 1 : 0.98 }}
+      whileHover={whileHover}
+      whileTap={whileTap}
       className="inline-flex items-center gap-2"
     >
       {children}
@@ -96,6 +105,8 @@ export function Button({
       disabled={disabled}
       onClick={onClick}
       className={`${baseStyles} ${variantStyle} ${sizeStyle} ${className}`}
+      whileHover={whileHover}
+      whileTap={whileTap}
       {...props}
     >
       {buttonContent}
@@ -103,36 +114,31 @@ export function Button({
   );
 }
 
-/* Icon button component */
+/* Icon button component - Linear style */
 interface IconButtonProps {
   icon: ReactNode;
   label: string;
   href?: string;
   className?: string;
   onClick?: () => void;
-  variant?: "dark" | "light";
 }
 
-export function IconButton({ 
+export function IconButton ({ 
   icon, 
   label, 
   href, 
   className = "", 
-  onClick,
-  variant = "light" 
+  onClick 
 }: IconButtonProps) {
-  const baseStyles = variant === "dark" 
-    ? "bg-transparent text-[#F0F0F0] hover:text-white hover:bg-[#1A1A1A]"
-    : "bg-transparent text-[#1A1A1A] hover:text-[#1A1A1A] hover:bg-[#F7F6F3]";
-
   const button = (
     <motion.button
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={`
-        p-3 rounded-full ${baseStyles}
-        transition-colors duration-150
-        focus:outline-none focus-visible:ring-2 focus-visible:ring-[#2563EB]
+        p-3 rounded-full 
+        bg-transparent text-[#8A8A8A] hover:text-[#F2F2F2] hover:bg-[rgba(255,255,255,0.04)]
+        transition-colors duration-120ms
+        focus:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(37,99,235,0.5)]
         ${className}
       `}
       aria-label={label}

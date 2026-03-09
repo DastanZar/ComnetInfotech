@@ -44,17 +44,17 @@ const trustItems = [
 
 export function TrustStrip() {
   return (
-    <section className="bg-[#161616] py-12">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+    <section className="py-12 bg-[#0F0F0F]">
+      <div className="max-w-[1120px] mx-auto px-6">
         <StaggerWrapper className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {trustItems.map((item, index) => (
             <StaggerItem key={index} className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 rounded-[12px] bg-[#2A2A2A] flex items-center justify-center text-[#3B82F6]">
+              <div className="flex-shrink-0 w-12 h-12 rounded-[8px] bg-[#111111] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-[#3B82F6]">
                 {item.icon}
               </div>
               <div>
-                <h3 className="font-semibold text-[#F0F0F0] text-[15px]">{item.title}</h3>
-                <p className="text-sm text-[#A0A0A0] mt-1">{item.description}</p>
+                <h3 className="font-semibold text-[#F2F2F2] text-[15px]">{item.title}</h3>
+                <p className="text-[14px] text-[#8A8A8A] mt-1">{item.description}</p>
               </div>
             </StaggerItem>
           ))}

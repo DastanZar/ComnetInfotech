@@ -54,8 +54,8 @@ const segments = [
 
 export function WhoWeServe() {
   return (
-    <section className="py-24 bg-[#0D0D0D]" id="who-we-serve">
-      <div className="max-w-[1200px] mx-auto px-6 md:px-8">
+    <section className="py-24 bg-[#0F0F0F]" id="who-we-serve">
+      <div className="max-w-[1120px] mx-auto px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,20 +64,20 @@ export function WhoWeServe() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-[640px] mx-auto mb-12"
         >
-          <span className="eyebrow eyebrow-dark">
+          <span className="eyebrow">
             Who We Serve
           </span>
-          <h2 className="text-[32px] md:text-[36px] font-bold text-[#F0F0F0] tracking-tight mt-2">
+          <h2 className="text-[32px] font-bold text-[#F2F2F2] mt-2" style={{ letterSpacing: '-0.03em' }}>
             Technology Support for Everyone
           </h2>
-          <p className="text-[#A0A0A0] text-lg mt-4">
+          <p className="text-[#8A8A8A] text-[15px] mt-4">
             Whether you're an individual needing home WiFi help or a business requiring 
             enterprise-grade solutions, we tailor our services to your needs.
           </p>
         </motion.div>
 
         {/* Segments Grid */}
-        <StaggerWrapper className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <StaggerWrapper className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
           {segments.map((segment, index) => (
             <StaggerItem key={index}>
               <motion.div
@@ -85,11 +85,11 @@ export function WhoWeServe() {
                 transition={{ duration: 0.15 }}
               >
                 <Card variant="dark" className="h-full text-center">
-                  <div className="w-14 h-14 mx-auto mb-4 rounded-[12px] bg-[#2A2A2A] flex items-center justify-center text-[#3B82F6]">
+                  <div className="w-14 h-14 mx-auto mb-4 rounded-[8px] bg-[#111111] border border-[rgba(255,255,255,0.06)] flex items-center justify-center text-[#3B82F6]">
                     {segment.icon}
                   </div>
-                  <h3 className="text-[15px] font-semibold text-[#F0F0F0] mb-2">{segment.title}</h3>
-                  <p className="text-[#A0A0A0] text-sm">{segment.description}</p>
+                  <h3 className="text-[15px] font-semibold text-[#F2F2F2] mb-2">{segment.title}</h3>
+                  <p className="text-[14px] text-[#8A8A8A]">{segment.description}</p>
                 </Card>
               </motion.div>
             </StaggerItem>
