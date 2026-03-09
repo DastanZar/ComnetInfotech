@@ -25,7 +25,7 @@ const resources = [
 
 export function ResourcesPreview() {
   return (
-    <section className="py-24 bg-[#FFFFFF]" id="resources">
+    <section className="py-24 bg-[#0A0A0A]" id="resources">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div
@@ -36,13 +36,13 @@ export function ResourcesPreview() {
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12"
         >
           <div className="max-w-[500px]">
-            <span className="eyebrow eyebrow-light">
+            <span className="eyebrow">
               Resources
             </span>
-            <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
+            <h2 className="text-[32px] md:text-[36px] font-bold text-[#F2F2F2] tracking-tight mt-2">
               Helpful Articles & Guides
             </h2>
-            <p className="mt-3 text-[#374151]">
+            <p className="mt-3 text-[#8A8A8A]">
               Practical resources to help you understand technology and make better decisions.
             </p>
           </div>
@@ -59,14 +59,14 @@ export function ResourcesPreview() {
                 whileHover={{ y: 0 }}
                 transition={{ duration: 0.15 }}
               >
-                <Card variant="light" className="h-full cursor-pointer group">
+                <Card variant="dark" className="h-full cursor-pointer group">
                   <div className="text-xs font-semibold text-[#2563EB] uppercase tracking-wider mb-3">
                     {resource.category}
                   </div>
-                  <h3 className="text-[15px] font-semibold text-[#1A1A1A] mb-2 group-hover:text-[#2563EB] transition-colors">
+                  <h3 className="text-[15px] font-semibold text-[#F2F2F2] mb-2 group-hover:text-[#2563EB] transition-colors">
                     {resource.title}
                   </h3>
-                  <p className="text-[#374151] text-sm">
+                  <p className="text-[#8A8A8A] text-sm">
                     {resource.description}
                   </p>
                   <div className="mt-4 flex items-center text-[#2563EB] text-sm font-semibold">

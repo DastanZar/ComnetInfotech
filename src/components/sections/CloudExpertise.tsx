@@ -25,7 +25,7 @@ const cloudFeatures = [
 
 export function CloudExpertise() {
   return (
-    <section className="py-24 bg-[#F7F6F3]" id="cloud">
+    <section className="py-24 bg-[#0A0A0A]" id="cloud">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
@@ -35,18 +35,18 @@ export function CloudExpertise() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="eyebrow eyebrow-light">
+            <span className="eyebrow">
               Cloud Expertise
             </span>
-            <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
+            <h2 className="text-[32px] md:text-[36px] font-bold text-[#F2F2F2] tracking-tight mt-2">
               Cloud Solutions Built for How You Work
             </h2>
-            <p className="text-[#374151] text-lg mt-6 leading-relaxed">
+            <p className="text-[#8A8A8A] text-lg mt-6 leading-relaxed">
               The cloud isn't just the future—it's the present. We help businesses 
               of all sizes leverage cloud technology to work smarter, collaborate better, 
               and access their data from anywhere.
             </p>
-            <p className="text-[#374151] mt-6 leading-relaxed">
+            <p className="text-[#8A8A8A] mt-6 leading-relaxed">
               Whether you're moving to the cloud for the first time or optimizing 
               your existing setup, our certified team guides you through every step.
             </p>
@@ -54,7 +54,7 @@ export function CloudExpertise() {
               <Button variant="primary" href="/cloud-services">
                 View Cloud Solutions
               </Button>
-              <Button variant="secondary-light" href="/contact">
+              <Button variant="secondary" href="/contact">
                 Talk to Comnet
               </Button>
             </div>
@@ -76,14 +76,14 @@ export function CloudExpertise() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
               >
-                <Card variant="light" className="bg-[#FFFFFF]">
+                <Card variant="dark">
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-[8px] bg-[#2563EB] flex items-center justify-center flex-shrink-0">
                       <CheckIcon />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-[#1A1A1A] mb-1">{feature.title}</h3>
-                      <p className="text-[#374151] text-sm">{feature.description}</p>
+                      <h3 className="font-semibold text-[#F2F2F2] mb-1">{feature.title}</h3>
+                      <p className="text-[#8A8A8A] text-sm">{feature.description}</p>
                     </div>
                   </div>
                 </Card>

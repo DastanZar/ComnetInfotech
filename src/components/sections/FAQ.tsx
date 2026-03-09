@@ -31,7 +31,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 bg-[#FFFFFF]" id="faq">
+    <section className="py-24 bg-[#0A0A0A]" id="faq">
       <div className="max-w-[720px] mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div
@@ -41,13 +41,13 @@ export function FAQ() {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <span className="eyebrow eyebrow-light">
+          <span className="eyebrow">
             Frequently Asked Questions
           </span>
-          <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
+          <h2 className="text-[32px] md:text-[36px] font-bold text-[#F2F2F2] tracking-tight mt-2">
             Common Questions
           </h2>
-          <p className="text-[#374151] mt-4">
+          <p className="text-[#8A8A8A] mt-4">
             Have a question? We probably have an answer. Can't find what you're looking for? 
             Get in touch—we're happy to help.
           </p>
@@ -62,14 +62,14 @@ export function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="border border-[#E9E9E7] rounded-[12px] overflow-hidden"
+              className="border border-[rgba(255,255,255,0.06)] rounded-[12px] overflow-hidden"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#F7F6F3] transition-colors"
+                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-[#111111] transition-colors"
                 aria-expanded={openIndex === index}
               >
-                <span className="font-semibold text-[#1A1A1A] pr-4 text-[15px]">{faq.question}</span>
+                <span className="font-semibold text-[#F2F2F2] pr-4 text-[15px]">{faq.question}</span>
                 <motion.span
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.2 }}
@@ -87,7 +87,7 @@ export function FAQ() {
                     transition={{ duration: 0.2 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-4 text-[#374151] text-[15px] leading-relaxed">
+                    <div className="px-6 pb-4 text-[#8A8A8A] text-[15px] leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>
@@ -116,7 +116,7 @@ export function FAQ() {
 
 function ChevronIcon() {
   return (
-    <svg className="w-5 h-5 text-[#9CA3AF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+    <svg className="w-5 h-5 text-[#8A8A8A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>
   );

@@ -26,7 +26,7 @@ const testimonials = [
 
 export function Testimonials() {
   return (
-    <section className="py-24 bg-[#F7F6F3]" id="testimonials">
+    <section className="py-24 bg-[#0A0A0A]" id="testimonials">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         {/* Section Header */}
         <motion.div
@@ -36,13 +36,13 @@ export function Testimonials() {
           transition={{ duration: 0.5 }}
           className="text-center max-w-[640px] mx-auto mb-12"
         >
-          <span className="eyebrow eyebrow-light">
+          <span className="eyebrow">
             Testimonials
           </span>
-          <h2 className="text-[32px] md:text-[36px] font-bold text-[#1A1A1A] tracking-tight mt-2">
+          <h2 className="text-[32px] md:text-[36px] font-bold text-[#F2F2F2] tracking-tight mt-2">
             What Our Clients Say
           </h2>
-          <p className="text-[#374151] text-lg mt-4">
+          <p className="text-[#8A8A8A] text-lg mt-4">
             We let our clients speak for themselves. Here's what people say 
             about working with Comnet Infotech.
           </p>
@@ -57,7 +57,7 @@ export function Testimonials() {
                 author={testimonial.author}
                 role={testimonial.role}
                 company={testimonial.company}
-                variant="light"
+                variant="dark"
               />
             </StaggerItem>
           ))}
