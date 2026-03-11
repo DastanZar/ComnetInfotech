@@ -136,8 +136,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-primary mb-1">Email</h3>
                       <p className="text-text-secondary">
-                        info@comnetinfotech.com<br />
-                        support@comnetinfotech.com
+                        info@comnetinfotech.in<br />
+                        support@comnetinfotech.in
                       </p>
                     </div>
                   </div>

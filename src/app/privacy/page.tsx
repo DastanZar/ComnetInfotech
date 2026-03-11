@@ -56,7 +56,7 @@ export default function PrivacyPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-primary mb-4">Contact Us</h2>
               <p className="text-text-secondary">
-                If you have questions about this Privacy Policy, please contact us at info@comnetinfotech.com.
+                If you have questions about this Privacy Policy, please contact us at info@comnetinfotech.in.
               </p>
             </section>
           </div>

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -12,25 +13,25 @@ const resources = [
   {
     category: "Guides",
     items: [
-      { title: "Getting Started with Cloud Storage", description: "Learn the basics of cloud storage and how to choose the right solution." },
-      { title: "Small Business IT Checklist", description: "Essential IT components every small business needs." },
-      { title: "Securing Your Home Network", description: "Steps to protect your home network from cyber threats." },
+      { title: "Getting Started with Cloud Storage", description: "Learn the basics of cloud storage and how to choose the right solution.", href: "/resources/cloud-storage-guide" },
+      { title: "Small Business IT Checklist", description: "Essential IT components every small business needs.", href: "/resources/do-i-need-managed-it" },
+      { title: "Securing Your Home Network", description: "Steps to protect your home network from cyber threats.", href: "/resources/home-network-security" },
     ],
   },
   {
     category: "Tips",
     items: [
-      { title: "10 Ways to Speed Up Your Computer", description: "Simple tips to improve your computer's performance." },
-      { title: "Password Best Practices", description: "How to create and manage secure passwords." },
-      { title: "Data Backup Strategies", description: "Why backups matter and how to implement them effectively." },
+      { title: "10 Ways to Speed Up Your Computer", description: "Simple tips to improve your computer's performance.", href: "/resources/do-i-need-managed-it" },
+      { title: "Password Best Practices", description: "How to create and manage secure passwords.", href: "/resources/home-network-security" },
+      { title: "Data Backup Strategies", description: "Why backups matter and how to implement them effectively.", href: "/resources/cloud-storage-guide" },
     ],
   },
   {
     category: "FAQ",
     items: [
-      { title: "What is Cloud Computing?", description: "Understanding cloud services in simple terms." },
-      { title: "How does IT support work?", description: "An overview of our support process." },
-      { title: "Do I need managed IT services?", description: "Determine if managed services are right for your business." },
+      { title: "What is Cloud Computing?", description: "Understanding cloud services in simple terms.", href: "/resources/cloud-storage-guide" },
+      { title: "How does IT support work?", description: "An overview of our support process.", href: "/resources/do-i-need-managed-it" },
+      { title: "Do I need managed IT services?", description: "Determine if managed services are right for your business.", href: "/resources/do-i-need-managed-it" },
     ],
   },
 ];
@@ -66,9 +67,9 @@ export default function ResourcesPage() {
                   <Card key={index} className="p-6 hover:shadow-md transition-shadow">
                     <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
                     <p className="text-text-secondary text-sm mb-4">{item.description}</p>
-                    <a href="#" className="text-accent font-medium text-sm hover:underline">
+                    <Link href={item.href || "#"} className="text-accent font-medium text-sm hover:underline">
                       Read More →
-                    </a>
+                    </Link>
                   </Card>
                 ))}
               </div>

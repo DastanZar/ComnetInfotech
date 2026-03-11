@@ -6,21 +6,22 @@ import { TestimonialCard } from "../ui/Card";
 
 const testimonials = [
   {
-    quote: "Comnet took the time to understand our family's unique needs. Now our home network works perfectly, and when we have questions, they actually answer in terms we can understand.",
-    author: "Sarah M.",
-    role: "Homeowner",
+    quote: "We'd been patching our IT setup ourselves for years — a mix of personal emails, no backup, and one laptop that everyone was terrified would die. Comnet came in, assessed everything in a day, and had us on a proper cloud setup within the week. Haven't had a single crisis since. Worth every rupee.",
+    author: "Rajeev Malhotra",
+    role: "Director",
+    company: "Malhotra Trading Co., New Delhi",
   },
   {
-    quote: "As a small business owner, I needed IT support I could trust without breaking the bank. Comnet has been that partner—responsive, knowledgeable, and always honest.",
-    author: "James L.",
-    role: "Business Owner",
-    company: "Local Retail Shop",
+    quote: "What I needed wasn't a big IT company with a helpdesk ticket system. I needed someone who picks up the phone. Comnet has been managing our office infrastructure for over a year now — cloud, devices, the works. Responsive, honest, and they actually explain what they're doing. Rare.",
+    author: "Sunita Arora",
+    role: "Principal",
+    company: "Arora Family Office, Gurugram",
   },
   {
-    quote: "They helped us migrate to the cloud with zero downtime. Their team made what seemed like a daunting process feel simple and manageable.",
-    author: "Robert K.",
-    role: "Operations Manager",
-    company: "Professional Services Firm",
+    quote: "We run a small manufacturing unit and our machines need to be running. Comnet handles all our hardware maintenance and software updates under an AMC — the Lenovo authorisation was actually a big factor for us when choosing them. No downtime surprises in 18 months.",
+    author: "Vikram Sehgal",
+    role: "Operations Head",
+    company: "Sehgal Industries, Wazirpur",
   },
 ];
 
