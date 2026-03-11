@@ -52,6 +52,8 @@ export function Footer() {
                 {/* LinkedIn */}
                 <a
                   href="https://www.linkedin.com/company/comnetinfotech/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-[6px] bg-[#111111] flex items-center justify-center hover:bg-[#1A1A1A] border border-[rgba(255,255,255,0.06)] transition-colors"
                   aria-label="LinkedIn"
                 >
