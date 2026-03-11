@@ -61,7 +61,7 @@ export default function TermsPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-primary mb-4">Contact Us</h2>
               <p className="text-text-secondary">
-                If you have questions about these Terms of Service, please contact us at info@comnetinfotech.in.
+                If you have questions about these Terms of Service, please contact us at info@comnettech.in.
               </p>
             </section>
           </div>

@@ -104,10 +104,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-primary mb-1">Our Office</h3>
                       <p className="text-text-secondary">
-                        Shop No. 35, Ground Floor<br />
-                        Vardhman Grand Plaza<br />
-                        Manglam Place, Rohini Sector 3<br />
-                        Delhi - 110085
+                        6B/32, Wazirpur Community Centre, Deep Building<br />
+                        Delhi – 110052
                       </p>
                     </div>
                   </div>
@@ -136,8 +134,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-primary mb-1">Email</h3>
                       <p className="text-text-secondary">
-                        info@comnetinfotech.in<br />
-                        support@comnetinfotech.in
+                        info@comnettech.in
                       </p>
                     </div>
                   </div>
@@ -159,15 +156,6 @@ export default function ContactPage() {
                 </Card>
               </div>
             </div>
-          </div>
-        </div>
-      </SectionWrapper>
-
-      {/* Map Placeholder */}
-      <SectionWrapper className="py-0">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-background-alt rounded-2xl h-64 flex items-center justify-center">
-            <p className="text-text-secondary">Map integration would go here</p>
           </div>
         </div>
       </SectionWrapper>
