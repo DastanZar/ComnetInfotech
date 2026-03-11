@@ -1,15 +1,10 @@
 "use client";
 
-import { Metadata } from "next";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 import { useState } from "react";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Comnet Infotech",
-  description: "Get in touch with Comnet Infotech for IT services, support, and consultations.",
-};
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
