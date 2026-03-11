@@ -18,30 +18,23 @@ export default function ContactPage() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Replace this with your Formspree endpoint URL
-    // Get it from https://formspree.io/ after creating a form
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+    // For simple email form, we'll use a mailto link approach
+    // The form data is encoded and opened in the user's email client
+    const email = "info@comnettech.in";
+    const subject = encodeURIComponent(formData.get("service") ? `Inquiry: ${formData.get("service")}` : "New Contact Form Submission");
+    const body = encodeURIComponent(
+      `Name: ${formData.get("firstName")} ${formData.get("lastName")}\n` +
+      `Email: ${formData.get("email")}\n` +
+      `Phone: ${formData.get("phone")}\n` +
+      `Service: ${formData.get("service")}\n\n` +
+      `Message:\n${formData.get("message")}`
+    );
 
-    try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: "POST",
-        body: formData,
-        headers: {
-          "Accept": "application/json",
-        },
-      });
-
-      if (response.ok) {
-        setSubmitStatus("success");
-        form.reset();
-      } else {
-        setSubmitStatus("error");
-      }
-    } catch (error) {
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Open email client with pre-filled content
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    
+    setSubmitStatus("success");
+    setIsSubmitting(false);
   };
   return (
     <main>
