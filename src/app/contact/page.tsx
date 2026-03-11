@@ -1,7 +1,10 @@
+"use client";
+
 import { Metadata } from "next";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
+import { useState } from "react";
 
 export const metadata: Metadata = {
   title: "Contact Us | Comnet Infotech",
@@ -9,6 +12,42 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Replace this with your Formspree endpoint URL
+    // Get it from https://formspree.io/ after creating a form
+    const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: {
+          "Accept": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        form.reset();
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <main>
       {/* Hero Section */}
@@ -32,12 +71,14 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div>
               <h2 className="text-2xl font-bold text-primary mb-6">Send Us a Message</h2>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm font-medium text-text-secondary mb-2">First Name</label>
                     <input 
                       type="text" 
+                      name="firstName"
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-accent"
                       placeholder="John"
                     />
@@ -46,6 +87,8 @@ export default function ContactPage() {
                     <label className="block text-sm font-medium text-text-secondary mb-2">Last Name</label>
                     <input 
                       type="text" 
+                      name="lastName"
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-accent"
                       placeholder="Doe"
                     />
@@ -55,6 +98,8 @@ export default function ContactPage() {
                   <label className="block text-sm font-medium text-text-secondary mb-2">Email</label>
                   <input 
                     type="email" 
+                    name="email"
+                    required
                     className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="john@company.com"
                   />
@@ -63,13 +108,14 @@ export default function ContactPage() {
                   <label className="block text-sm font-medium text-text-secondary mb-2">Phone</label>
                   <input 
                     type="tel" 
+                    name="phone"
                     className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="(123) 456-7890"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-text-secondary mb-2">Service Interested In</label>
-                  <select className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-accent">
+                  <select name="service" className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-accent">
                     <option value="">Select a service</option>
                     <option value="cloud">Cloud Services</option>
                     <option value="support">IT Support</option>
@@ -81,13 +127,25 @@ export default function ContactPage() {
                 <div>
                   <label className="block text-sm font-medium text-text-secondary mb-2">Message</label>
                   <textarea 
+                    name="message"
+                    required
                     rows={5}
                     className="w-full px-4 py-3 rounded-lg border border-border focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="Tell us about your needs..."
                   />
                 </div>
-                <Button variant="cta" size="lg" className="w-full justify-center">
-                  Send Message
+                {submitStatus === "success" && (
+                  <div className="p-4 rounded-lg bg-green-50 border border-green-200 text-green-700">
+                    Thank you! Your message has been sent. We'll get back to you soon.
+                  </div>
+                )}
+                {submitStatus === "error" && (
+                  <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700">
+                    Something went wrong. Please try again or email us directly.
+                  </div>
+                )}
+                <Button type="submit" variant="cta" size="lg" className="w-full justify-center" disabled={isSubmitting}>
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>
