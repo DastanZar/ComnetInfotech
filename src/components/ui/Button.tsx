@@ -73,7 +73,7 @@ export function Button({
 
   // Primary and nav buttons get subtle scale on hover
   const whileHover = variant === "primary" || variant === "nav"
-    ? { scale: disabled ? 1 : 1.01 }
+    ? { scale: disabled ? 1 : 1.02, y: disabled ? 0 : -1 }
     : undefined;
   const whileTap = { scale: disabled ? 1 : 0.99 };
 

@@ -44,7 +44,7 @@ export function Header() {
         animate={{ y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={`
-          fixed top-0 left-0 right-0 z-50 h-14
+          fixed top-0 left-0 right-0 z-50 h-16
           bg-[rgba(10,10,10,0.80)] backdrop-blur-[12px] backdrop-saturate-[180%]
           border-b border-[rgba(255,255,255,0.06)]
           transition-all duration-200 ease
@@ -56,27 +56,34 @@ export function Header() {
             <Link href="/" className="flex items-center gap-2">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="text-[15px] font-bold text-[#F2F2F2]"
+                className="text-[19px] font-bold text-[#F2F2F2] tracking-[0.5px]"
               >
                 Comnet<span className="text-[#F97316]">Infotech</span>
               </motion.div>
             </Link>
 
             {/* Desktop Navigation - Linear style */}
-            <nav className="hidden lg:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center">
               {navItems.slice(0, 7).map((item, index) => (
                 <motion.div
                   key={item.href}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 + index * 0.05 }}
+                  className="flex items-center"
                 >
+                  {index > 0 && (
+                    <div className="h-4 w-[1px] bg-[rgba(255,255,255,0.2)] mx-0" />
+                  )}
                   <Link
                     href={item.href}
                     className={`
-                      px-3 py-2 text-[14px] font-medium rounded-[6px]
-                      transition-colors duration-120ms
-                      text-[#8A8A8A] hover:text-[#F2F2F2]
+                      px-4 py-2 text-[14px] font-medium
+                      transition-colors duration-200
+                      ${pathname === item.href 
+                        ? "text-[#F97316]"
+                        : "text-[#8A8A8A] hover:text-[#F97316] hover:underline hover:underline-offset-4"
+                      }
                     `}
                   >
                     {item.label}
@@ -92,7 +99,12 @@ export function Header() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.3 }}
               >
-                <Button variant="primary" size="sm" href="/contact">
+                <Button 
+                  variant="primary" 
+                  size="sm" 
+                  href="/contact"
+                  className="px-5 py-2.5 shadow-[0_2px_8px_rgba(255,140,0,0.4)]"
+                >
                   Book a Consultation
                 </Button>
               </motion.div>
@@ -218,7 +230,7 @@ export function Header() {
       </AnimatePresence>
 
       {/* Spacer for fixed header */}
-      <div className="h-14" />
+      <div className="h-16" />
     </>
   );
 }
