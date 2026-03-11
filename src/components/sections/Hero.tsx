@@ -78,11 +78,11 @@ export function Hero() {
                 <div className="text-[12px] text-[#4A4A4A] mt-1">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-[24px] font-bold text-[#F2F2F2]">500+</div>
+                <div className="text-[24px] font-bold text-[#F2F2F2]">574+</div>
                 <div className="text-[12px] text-[#4A4A4A] mt-1">Clients Served</div>
               </div>
               <div className="text-center">
-                <div className="text-[24px] font-bold text-[#F2F2F2]">99.9%</div>
+                <div className="text-[24px] font-bold text-[#F2F2F2]">99.999%</div>
                 <div className="text-[12px] text-[#4A4A4A] mt-1">Uptime</div>
               </div>
               <div className="text-center">

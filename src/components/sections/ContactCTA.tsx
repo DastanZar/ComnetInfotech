@@ -47,8 +47,8 @@ export function ContactCTA() {
 
           <p className="mt-8 text-white/60 text-sm">
             Or give us a call at{' '}
-            <a href="tel:+919999999999" className="text-white hover:underline font-medium">
-              +91 99999 99999
+            <a href="tel:+918660887476" className="text-white hover:underline font-medium">
+              +91 8660887476
             </a>
           </p>
         </motion.div>

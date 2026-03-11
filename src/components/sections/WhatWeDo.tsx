@@ -17,20 +17,22 @@ export function WhatWeDo() {
             transition={{ duration: 0.6 }}
           >
             <span className="eyebrow">
-              What We Do
+              Our Story
             </span>
             <h2 className="text-[32px] md:text-[32px] font-bold text-[#F2F2F2] mt-2" style={{ letterSpacing: '-0.03em' }}>
               Technology That Works for You
             </h2>
             <p className="text-[#8A8A8A] text-[15px] mt-6 leading-[1.6]">
-              At Comnet Infotech, we believe technology should simplify your life—not complicate it. 
-              Whether you're a family looking to set up your first home network or a business 
-              needing enterprise-grade cloud solutions, we're here to help.
+              Comnet Infotech is a Delhi-based IT and cloud services company built for businesses that run lean and can't afford for technology to be the bottleneck.
             </p>
-            <p className="text-[#8A8A8A] text-[15px] mt-6 leading-[1.6]">
-              Since 2005, we've been the trusted technology partner for homes and businesses 
-              throughout the region. Our approach is simple: listen to your needs, explain your 
-              options in plain English, and deliver solutions that just work.
+            <p className="text-[#8A8A8A] text-[15px] mt-4 leading-[1.6]">
+              We work with SMBs, family offices, and boutique operations across North India — handling cloud infrastructure, managed IT support, hardware, and annual maintenance under one roof. No handoffs. No finger-pointing. One team that owns the problem end to end.
+            </p>
+            <p className="text-[#8A8A8A] text-[15px] mt-4 leading-[1.6]">
+              We hold authorised service contracts with Lenovo and ASUS, and we have spent years building and maintaining infrastructure for businesses in manufacturing, trading, logistics, and professional services across Delhi NCR.
+            </p>
+            <p className="text-[#8A8A8A] text-[15px] mt-4 leading-[1.6]">
+              Small enough to know your name. Experienced enough to know what you need before you do.
             </p>
             <div className="flex flex-wrap gap-3 mt-8">
               <Button variant="primary" href="/about">

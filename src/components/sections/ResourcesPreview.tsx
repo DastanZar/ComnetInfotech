@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { StaggerWrapper, StaggerItem } from "../ui/SectionWrapper";
 import { Card } from "../ui/Card";
 import { Button } from "../ui/Button";
@@ -10,16 +11,19 @@ const resources = [
     category: "Guide",
     title: "5 Signs Your Business Needs Managed IT Services",
     description: "Learn the warning signs that indicate it's time to upgrade your IT support.",
+    href: "/resources/do-i-need-managed-it",
   },
   {
     category: "Checklist",
     title: "Home Network Security Checklist",
     description: "Essential steps to secure your home network and protect your family.",
+    href: "/resources/home-network-security",
   },
   {
     category: "Article",
     title: "Cloud Migration: What to Expect",
     description: "A practical guide to planning and executing a smooth cloud transition.",
+    href: "/resources/cloud-storage-guide",
   },
 ];
 
@@ -60,19 +64,21 @@ export function ResourcesPreview() {
                 transition={{ duration: 0.15 }}
               >
                 <Card variant="dark" className="h-full cursor-pointer group">
-                  <div className="text-xs font-semibold text-[#F97316] uppercase tracking-wider mb-3">
-                    {resource.category}
-                  </div>
-                  <h3 className="text-[15px] font-semibold text-[#F2F2F2] mb-2 group-hover:text-[#F97316] transition-colors">
-                    {resource.title}
-                  </h3>
-                  <p className="text-[#8A8A8A] text-sm">
-                    {resource.description}
-                  </p>
-                  <div className="mt-4 flex items-center text-[#F97316] text-sm font-semibold">
-                    Read More
-                    <ArrowIcon />
-                  </div>
+                  <Link href={resource.href}>
+                    <div className="text-xs font-semibold text-[#F97316] uppercase tracking-wider mb-3">
+                      {resource.category}
+                    </div>
+                    <h3 className="text-[15px] font-semibold text-[#F2F2F2] mb-2 group-hover:text-[#F97316] transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="text-[#8A8A8A] text-sm">
+                      {resource.description}
+                    </p>
+                    <div className="mt-4 flex items-center text-[#F97316] text-sm font-semibold">
+                      Read More
+                      <ArrowIcon />
+                    </div>
+                  </Link>
                 </Card>
               </motion.div>
             </StaggerItem>
