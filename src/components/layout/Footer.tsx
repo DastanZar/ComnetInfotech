@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "../ui/Button";
 
 const footerLinks = {
@@ -41,8 +42,15 @@ export function Footer() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Link href="/" className="text-[15px] font-bold text-[#F2F2F2]">
-                Comnet<span className="text-[#F97316]">Infotech</span>
+              <Link href="/" className="relative h-8 w-auto inline-block">
+                <Image
+                  src="/logo.png"
+                  alt="ComnetTech"
+                  width={120}
+                  height={32}
+                  className="h-8 w-auto"
+                  style={{ filter: "brightness(0) invert(1)" }}
+                />
               </Link>
               <p className="mt-4 text-[#4A4A4A] text-[13px] leading-relaxed">
                 Your trusted partner for cloud solutions, IT support, and hardware services. 

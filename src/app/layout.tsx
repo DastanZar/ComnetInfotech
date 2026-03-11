@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Comnet Infotech | Cloud Solutions, IT Support & Hardware Services",
-  description: "Your trusted partner for cloud solutions, IT support, and hardware services. We help homes and businesses navigate technology with confidence since 2005.",
+  title: "ComnetTech | Cloud, IT Support & Hardware — Delhi",
+  description: "Managed IT services, cloud infrastructure, and hardware solutions for SMBs, family offices, and lean businesses across Delhi NCR.",
 };
 
 export default function RootLayout({
@@ -24,6 +24,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
+        <meta name="theme-color" content="#0D0D0D" />
+      </head>
       <body className="antialiased font-sans">
         <Header />
         {children}

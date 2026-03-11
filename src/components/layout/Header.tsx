@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/Button";
 
@@ -56,9 +57,16 @@ export function Header() {
             <Link href="/" className="flex items-center gap-2">
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="text-[19px] font-bold text-[#F2F2F2] tracking-[0.5px]"
+                className="relative h-9 w-auto"
               >
-                Comnet<span className="text-[#F97316]">Infotech</span>
+                <Image
+                  src="/logo.png"
+                  alt="ComnetTech"
+                  width={150}
+                  height={36}
+                  className="h-9 w-auto"
+                  style={{ filter: "brightness(0) invert(1)" }}
+                />
               </motion.div>
             </Link>
 
@@ -174,8 +182,15 @@ export function Header() {
               <div className="p-6">
                 {/* Mobile Logo */}
                 <div className="flex items-center justify-between mb-8">
-                  <Link href="/" className="text-lg font-bold text-[#F2F2F2]">
-                    Comnet<span className="text-[#F97316]">Infotech</span>
+                  <Link href="/" className="relative h-8 w-auto">
+                    <Image
+                      src="/logo.png"
+                      alt="ComnetTech"
+                      width={120}
+                      height={32}
+                      className="h-8 w-auto"
+                      style={{ filter: "brightness(0) invert(1)" }}
+                    />
                   </Link>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
