@@ -51,7 +51,7 @@ export function Footer() {
               <div className="mt-6 flex gap-3">
                 {/* LinkedIn */}
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/comnetinfotech/"
                   className="w-9 h-9 rounded-[6px] bg-[#111111] flex items-center justify-center hover:bg-[#1A1A1A] border border-[rgba(255,255,255,0.06)] transition-colors"
                   aria-label="LinkedIn"
                 >
