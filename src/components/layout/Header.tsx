@@ -54,9 +54,9 @@ export function Header() {
           <div className="flex items-center justify-between h-full">
             {/* Logo - Linear style */}
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-[16px] font-bold text-orange-500 font-sans">
-                ComnetInfotech
-              </span>
+              <span className="text-[16px] font-bold font-sans">
+                  <span className="text-orange-500">Comnet</span><span className="text-blue-500">Infotech</span>
+                </span>
             </Link>
 
             {/* Desktop Navigation - Linear style */}
