@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Button } from "../ui/Button";
 
@@ -55,19 +54,9 @@ export function Header() {
           <div className="flex items-center justify-between h-full">
             {/* Logo - Linear style */}
             <Link href="/" className="flex items-center gap-2">
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                className="relative h-9 w-auto"
-              >
-                <Image
-                  src="/logo.png"
-                  alt="ComnetTech"
-                  width={150}
-                  height={36}
-                  className="h-9 w-auto"
-                  style={{ filter: "brightness(0) invert(1)" }}
-                />
-              </motion.div>
+              <span className="text-[16px] font-bold text-orange-500 font-sans">
+                ComnetInfotech
+              </span>
             </Link>
 
             {/* Desktop Navigation - Linear style */}
@@ -182,16 +171,9 @@ export function Header() {
               <div className="p-6">
                 {/* Mobile Logo */}
                 <div className="flex items-center justify-between mb-8">
-                  <Link href="/" className="relative h-8 w-auto">
-                    <Image
-                      src="/logo.png"
-                      alt="ComnetTech"
-                      width={120}
-                      height={32}
-                      className="h-8 w-auto"
-                      style={{ filter: "brightness(0) invert(1)" }}
-                    />
-                  </Link>
+                  <span className="text-[16px] font-bold text-orange-500 font-sans">
+                    ComnetInfotech
+                  </span>
                   <button
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="p-2 rounded-[6px] hover:bg-[rgba(255,255,255,0.04)]"
