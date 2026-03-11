@@ -87,19 +87,19 @@ export default function AboutPage() {
                 <div className="grid grid-cols-2 gap-6">
                   <div className="text-center p-6 bg-white rounded-xl">
                     <div className="text-4xl font-bold text-accent mb-2">15+</div>
-                    <div className="text-text-secondary">Years Experience</div>
+                    <div className="text-black">Years Experience</div>
                   </div>
                   <div className="text-center p-6 bg-white rounded-xl">
-                    <div className="text-4xl font-bold text-accent mb-2">500+</div>
-                    <div className="text-text-secondary">Clients Served</div>
+                    <div className="text-4xl font-bold text-accent mb-2">574+</div>
+                    <div className="text-black">Clients Served</div>
                   </div>
                   <div className="text-center p-6 bg-white rounded-xl">
-                    <div className="text-4xl font-bold text-accent mb-2">99.9%</div>
-                    <div className="text-text-secondary">Uptime</div>
+                    <div className="text-4xl font-bold text-accent mb-2">99.999%</div>
+                    <div className="text-black">Uptime</div>
                   </div>
                   <div className="text-center p-6 bg-white rounded-xl">
                     <div className="text-4xl font-bold text-accent mb-2">24/7</div>
-                    <div className="text-text-secondary">Support Available</div>
+                    <div className="text-black">Support Available</div>
                   </div>
                 </div>
               </div>
@@ -145,8 +145,8 @@ export default function AboutPage() {
                   <div className="flex-1 md:pr-12 md:text-right">
                     <div className="bg-white p-6 rounded-xl shadow-sm border border-border">
                       <div className="text-accent font-bold mb-2">{item.year}</div>
-                      <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
-                      <p className="text-text-secondary text-sm">{item.description}</p>
+                      <h3 className="text-lg font-bold text-black mb-2">{item.title}</h3>
+                      <p className="text-black/70 text-sm">{item.description}</p>
                     </div>
                   </div>
                   <div className="hidden md:flex w-4 h-4 rounded-full bg-accent absolute left-1/2 transform -translate-x-1/2" />

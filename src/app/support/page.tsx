@@ -50,8 +50,8 @@ export default function SupportPage() {
               <p className="text-text-secondary mb-6">
                 For immediate assistance, give us a call. We're available during business hours.
               </p>
-              <Button variant="outline" href="tel:+11234567890" className="w-full justify-center">
-                (123) 456-7890
+              <Button variant="outline" href="tel:+918660887476" className="w-full justify-center">
+                +91 8660887476
               </Button>
             </Card>
             
@@ -156,7 +156,7 @@ export default function SupportPage() {
             For critical issues outside of business hours, our emergency line is available for managed clients.
           </p>
           <p className="text-lg">
-            Emergency Hotline: <a href="tel:+11234567899" className="text-accent font-bold">(123) 456-7899</a>
+            Emergency Hotline: <a href="tel:+918660887476" className="text-accent font-bold">+91 8660887476</a>
           </p>
         </div>
       </SectionWrapper>

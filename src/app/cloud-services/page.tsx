@@ -104,7 +104,7 @@ export default function CloudServicesPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="p-6 text-center">
-              <div className="text-4xl font-bold text-accent mb-2">99.9%</div>
+              <div className="text-4xl font-bold text-accent mb-2">99.999%</div>
               <div className="text-text-secondary">Uptime Guarantee</div>
             </Card>
             <Card className="p-6 text-center">

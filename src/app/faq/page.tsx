@@ -76,8 +76,8 @@ export default function FAQPage() {
                 key={index} 
                 className="bg-white rounded-xl p-6 shadow-sm border border-border"
               >
-                <h3 className="text-lg font-bold text-primary mb-3">{faq.question}</h3>
-                <p className="text-text-secondary">{faq.answer}</p>
+                <h3 className="text-lg font-bold text-black mb-3">{faq.question}</h3>
+                <p className="text-black/70">{faq.answer}</p>
               </div>
             ))}
           </div>

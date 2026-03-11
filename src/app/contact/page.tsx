@@ -104,9 +104,10 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-primary mb-1">Our Office</h3>
                       <p className="text-text-secondary">
-                        123 Technology Way<br />
-                        Suite 100<br />
-                        Business City, ST 12345
+                        Shop No. 35, Ground Floor<br />
+                        Vardhman Grand Plaza<br />
+                        Manglam Place, Rohini Sector 3<br />
+                        Delhi - 110085
                       </p>
                     </div>
                   </div>
@@ -120,8 +121,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-bold text-primary mb-1">Phone</h3>
                       <p className="text-text-secondary">
-                        Main: (123) 456-7890<br />
-                        Support: (123) 456-7891
+                        Main: +91 8660887476<br />
+                        Support: +91 8660887476
                       </p>
                     </div>
                   </div>
