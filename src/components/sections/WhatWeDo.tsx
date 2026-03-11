@@ -23,7 +23,7 @@ export function WhatWeDo() {
               Technology That Works for You
             </h2>
             <p className="text-[#8A8A8A] text-[15px] mt-6 leading-[1.6]">
-              Comnet Infotech is a Delhi-based IT and cloud services company built for businesses that run lean and can't afford for technology to be the bottleneck.
+              <span className="text-orange-500">Comnet</span> <span className="text-blue-500">Infotech</span> is a Delhi-based IT and cloud services company built for businesses that run lean and can't afford for technology to be the bottleneck.
             </p>
             <p className="text-[#8A8A8A] text-[15px] mt-4 leading-[1.6]">
               We work with SMBs, family offices, and boutique operations across North India — handling cloud infrastructure, managed IT support, hardware, and annual maintenance under one roof. No handoffs. No finger-pointing. One team that owns the problem end to end.
